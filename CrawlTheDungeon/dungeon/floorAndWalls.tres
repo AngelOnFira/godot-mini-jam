@@ -214,6 +214,11 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 custom_solver_bias = 0.0
 points = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
+[sub_resource type="ConvexPolygonShape2D" id=117]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
 [sub_resource type="NavigationPolygon" id=16]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
@@ -299,11 +304,6 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
-
-[sub_resource type="ConvexPolygonShape2D" id=117]
-
-custom_solver_bias = 0.0
-points = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=118]
 
@@ -2223,6 +2223,34 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 116 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+141/name = "UPSSolidWallTN"
+141/texture = ExtResource( 1 )
+141/tex_offset = Vector2( 0, 0 )
+141/modulate = Color( 1, 1, 1, 1 )
+141/region = Rect2( 32, 128, 16, 16 )
+141/is_autotile = false
+141/occluder_offset = Vector2( 8, 8 )
+141/navigation_offset = Vector2( 8, 8 )
+141/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 116 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+142/name = "UPSBrockenWallVerticasl"
+142/texture = ExtResource( 1 )
+142/tex_offset = Vector2( 0, 0 )
+142/modulate = Color( 1, 1, 1, 1 )
+142/region = Rect2( 48, 128, 16, 16 )
+142/is_autotile = false
+142/occluder_offset = Vector2( 8, 8 )
+142/navigation_offset = Vector2( 8, 8 )
+142/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 117 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 
