@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://entities/slime/spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://entities/slime/slime.gd" type="Script" id=1]
+[ext_resource path="res://entities/slime/spritesheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -42,6 +43,9 @@ tracks/0/keys = {
 
 [node name="slime" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
+type = null
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
 root_node = NodePath("..")
@@ -66,8 +70,9 @@ playback/speed = 1.0
 
 [node name="Sprite" type="Sprite" parent="pivot" index="0"]
 
-texture = ExtResource( 1 )
+position = Vector2( 0.5, 0 )
+texture = ExtResource( 2 )
 hframes = 9
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 
