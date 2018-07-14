@@ -2,13 +2,13 @@
 
 [ext_resource path="res://dungeon/tiles.png" type="Texture" id=1]
 
-[sub_resource type="NavigationPolygon" id=1]
+[sub_resource type="NavigationPolygon" id=133]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=134]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
@@ -111,7 +111,7 @@ region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile" index="0"]
 
-navpoly = SubResource( 1 )
+navpoly = SubResource( 133 )
 enabled = true
 
 [node name="PSTile45" type="Sprite" parent="." index="1"]
@@ -127,10 +127,10 @@ region_rect = Rect2( 16, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile45" index="0"]
 
-navpoly = SubResource( 2 )
+navpoly = SubResource( 134 )
 enabled = true
 
-[node name="PSTile180" type="Sprite" parent="." index="2"]
+[node name="PSTile90" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
 position = Vector2( 32, 0 )
@@ -141,12 +141,12 @@ frame = 2
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile180" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile90" index="0"]
 
 navpoly = SubResource( 3 )
 enabled = true
 
-[node name="PSTile225" type="Sprite" parent="." index="3"]
+[node name="PSTile135" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
 position = Vector2( 48, 0 )
@@ -157,7 +157,7 @@ frame = 3
 region_enabled = true
 region_rect = Rect2( 48, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile225" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile135" index="0"]
 
 navpoly = SubResource( 4 )
 enabled = true
@@ -210,7 +210,7 @@ region_rect = Rect2( 0, 16, 16, 16 )
 navpoly = SubResource( 7 )
 enabled = true
 
-[node name="PSTile90" type="Sprite" parent="." index="7"]
+[node name="PSTile270" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 16, 16 )
@@ -221,7 +221,7 @@ frame = 9
 region_enabled = true
 region_rect = Rect2( 16, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile90" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile270" index="0"]
 
 navpoly = SubResource( 8 )
 enabled = true
@@ -242,7 +242,7 @@ region_rect = Rect2( 32, 16, 16, 16 )
 navpoly = SubResource( 9 )
 enabled = true
 
-[node name="tiles11" type="Sprite" parent="." index="9"]
+[node name="PSTile180" type="Sprite" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 48, 16 )
@@ -253,12 +253,12 @@ frame = 11
 region_enabled = true
 region_rect = Rect2( 48, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles11" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile180" index="0"]
 
 navpoly = SubResource( 10 )
 enabled = true
 
-[node name="tiles12" type="Sprite" parent="." index="10"]
+[node name="PSFragmentNE" type="Sprite" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( 64, 16 )
@@ -269,12 +269,12 @@ frame = 12
 region_enabled = true
 region_rect = Rect2( 64, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles12" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentNE" index="0"]
 
 navpoly = SubResource( 11 )
 enabled = true
 
-[node name="tiles13" type="Sprite" parent="." index="11"]
+[node name="PSFragmentNW" type="Sprite" parent="." index="11"]
 
 editor/display_folded = true
 position = Vector2( 80, 16 )
@@ -285,12 +285,12 @@ frame = 13
 region_enabled = true
 region_rect = Rect2( 80, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles13" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentNW" index="0"]
 
 navpoly = SubResource( 12 )
 enabled = true
 
-[node name="tiles16" type="Sprite" parent="." index="12"]
+[node name="PSCracked2" type="Sprite" parent="." index="12"]
 
 editor/display_folded = true
 position = Vector2( 0, 32 )
@@ -301,12 +301,12 @@ frame = 16
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles16" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSCracked2" index="0"]
 
 navpoly = SubResource( 13 )
 enabled = true
 
-[node name="tiles17" type="Sprite" parent="." index="13"]
+[node name="PSTile225" type="Sprite" parent="." index="13"]
 
 editor/display_folded = true
 position = Vector2( 16, 32 )
@@ -317,12 +317,12 @@ frame = 17
 region_enabled = true
 region_rect = Rect2( 16, 32, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles17" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile225" index="0"]
 
 navpoly = SubResource( 14 )
 enabled = true
 
-[node name="tiles18" type="Sprite" parent="." index="14"]
+[node name="PSTileBroken" type="Sprite" parent="." index="14"]
 
 editor/display_folded = true
 position = Vector2( 32, 32 )
@@ -333,12 +333,12 @@ frame = 18
 region_enabled = true
 region_rect = Rect2( 32, 32, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles18" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTileBroken" index="0"]
 
 navpoly = SubResource( 15 )
 enabled = true
 
-[node name="tiles19" type="Sprite" parent="." index="15"]
+[node name="PSTileVertical" type="Sprite" parent="." index="15"]
 
 editor/display_folded = true
 position = Vector2( 48, 32 )
@@ -349,12 +349,12 @@ frame = 19
 region_enabled = true
 region_rect = Rect2( 48, 32, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles19" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTileVertical" index="0"]
 
 navpoly = SubResource( 16 )
 enabled = true
 
-[node name="tiles7" type="Sprite" parent="." index="16"]
+[node name="UPSUpperLadder" type="Sprite" parent="." index="16"]
 
 editor/display_folded = true
 position = Vector2( 112, 0 )
@@ -365,7 +365,7 @@ frame = 7
 region_enabled = true
 region_rect = Rect2( 112, 0, 16, 16 )
 
-[node name="StaticBody2D" type="Area2D" parent="tiles7" index="0"]
+[node name="StaticBody2D" type="Area2D" parent="UPSUpperLadder" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -375,12 +375,12 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles7/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSUpperLadder/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles6" type="Sprite" parent="." index="17"]
+[node name="UPSStairsUp" type="Sprite" parent="." index="17"]
 
 editor/display_folded = true
 position = Vector2( 96, 0 )
@@ -391,7 +391,7 @@ frame = 6
 region_enabled = true
 region_rect = Rect2( 96, 0, 16, 16 )
 
-[node name="StaticBody2D" type="Area2D" parent="tiles6" index="0"]
+[node name="StaticBody2D" type="Area2D" parent="UPSStairsUp" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -401,12 +401,12 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles6/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSStairsUp/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles15" type="Sprite" parent="." index="18"]
+[node name="UPSLadderDown" type="Sprite" parent="." index="18"]
 
 editor/display_folded = true
 position = Vector2( 112, 16 )
@@ -417,7 +417,7 @@ frame = 15
 region_enabled = true
 region_rect = Rect2( 112, 16, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles15" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSLadderDown" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -427,12 +427,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles15/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSLadderDown/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles14" type="Sprite" parent="." index="19"]
+[node name="UPSStairsDown" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
 position = Vector2( 96, 16 )
@@ -443,7 +443,7 @@ frame = 14
 region_enabled = true
 region_rect = Rect2( 96, 16, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles14" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSStairsDown" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -453,13 +453,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles14/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSStairsDown/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles20" type="Sprite" parent="." index="20"]
+[node name="UPSCrackedWalls1" type="Sprite" parent="." index="20"]
 
+editor/display_folded = true
 position = Vector2( 64, 32 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -468,7 +469,7 @@ frame = 20
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles20" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSCrackedWalls1" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -478,13 +479,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles20/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSCrackedWalls1/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles21" type="Sprite" parent="." index="21"]
+[node name="UPSCrackedWalls2" type="Sprite" parent="." index="21"]
 
+editor/display_folded = true
 position = Vector2( 80, 32 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -493,8 +495,9 @@ frame = 21
 region_enabled = true
 region_rect = Rect2( 80, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles21" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSCrackedWalls2" index="0"]
 
+position = Vector2( 0.142395, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -503,13 +506,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles21/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSCrackedWalls2/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles22" type="Sprite" parent="." index="22"]
+[node name="UPSStairsNorth" type="Sprite" parent="." index="22"]
 
+editor/display_folded = true
 position = Vector2( 96, 32 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -518,7 +522,7 @@ frame = 22
 region_enabled = true
 region_rect = Rect2( 96, 32, 16, 16 )
 
-[node name="StaticBody2D" type="Area2D" parent="tiles22" index="0"]
+[node name="StaticBody2D" type="Area2D" parent="UPSStairsNorth" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -528,13 +532,14 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles22/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSStairsNorth/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles23" type="Sprite" parent="." index="23"]
+[node name="UPSBlock" type="Sprite" parent="." index="23"]
 
+editor/display_folded = true
 position = Vector2( 112, 32 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -543,7 +548,7 @@ frame = 23
 region_enabled = true
 region_rect = Rect2( 112, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles23" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSBlock" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -553,13 +558,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles23/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSBlock/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles24" type="Sprite" parent="." index="24"]
+[node name="UPSPlateauNW" type="Sprite" parent="." index="24"]
 
+editor/display_folded = true
 position = Vector2( 0, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -568,7 +574,7 @@ frame = 24
 region_enabled = true
 region_rect = Rect2( 0, 48, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles24" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauNW" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -578,13 +584,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles24/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauNW/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles25" type="Sprite" parent="." index="25"]
+[node name="UPSPlateauN" type="Sprite" parent="." index="25"]
 
+editor/display_folded = true
 position = Vector2( 16, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -593,7 +600,7 @@ frame = 25
 region_enabled = true
 region_rect = Rect2( 16, 48, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles25" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauN" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -603,13 +610,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles25/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauN/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles26" type="Sprite" parent="." index="26"]
+[node name="UpsPlateauNE" type="Sprite" parent="." index="26"]
 
+editor/display_folded = true
 position = Vector2( 32, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -618,7 +626,7 @@ frame = 26
 region_enabled = true
 region_rect = Rect2( 32, 48, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles26" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UpsPlateauNE" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -628,13 +636,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles26/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UpsPlateauNE/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles27" type="Sprite" parent="." index="27"]
 
+editor/display_folded = true
 position = Vector2( 48, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -660,6 +669,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles28" type="Sprite" parent="." index="28"]
 
+editor/display_folded = true
 position = Vector2( 64, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -685,6 +695,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles29" type="Sprite" parent="." index="29"]
 
+editor/display_folded = true
 position = Vector2( 80, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -710,6 +721,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles30" type="Sprite" parent="." index="30"]
 
+editor/display_folded = true
 position = Vector2( 96, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -735,6 +747,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles31" type="Sprite" parent="." index="31"]
 
+editor/display_folded = true
 position = Vector2( 112, 48 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -758,8 +771,9 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles32" type="Sprite" parent="." index="32"]
+[node name="UPSPlateauW" type="Sprite" parent="." index="32"]
 
+editor/display_folded = true
 position = Vector2( 0, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -768,7 +782,7 @@ frame = 32
 region_enabled = true
 region_rect = Rect2( 0, 64, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles32" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauW" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -778,13 +792,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles32/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauW/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles33" type="Sprite" parent="." index="33"]
+[node name="UPSPlateauCentre" type="Sprite" parent="." index="33"]
 
+editor/display_folded = true
 position = Vector2( 16, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -793,7 +808,7 @@ frame = 33
 region_enabled = true
 region_rect = Rect2( 16, 64, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles33" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauCentre" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -803,13 +818,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles33/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauCentre/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles34" type="Sprite" parent="." index="34"]
+[node name="UPSPlateauE" type="Sprite" parent="." index="34"]
 
+editor/display_folded = true
 position = Vector2( 32, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -818,7 +834,7 @@ frame = 34
 region_enabled = true
 region_rect = Rect2( 32, 64, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles34" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauE" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -828,13 +844,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles34/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauE/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles35" type="Sprite" parent="." index="35"]
 
+editor/display_folded = true
 position = Vector2( 48, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -860,6 +877,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles36" type="Sprite" parent="." index="36"]
 
+editor/display_folded = true
 position = Vector2( 64, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -885,6 +903,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles37" type="Sprite" parent="." index="37"]
 
+editor/display_folded = true
 position = Vector2( 80, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -910,6 +929,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles38" type="Sprite" parent="." index="38"]
 
+editor/display_folded = true
 position = Vector2( 96, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -935,6 +955,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles39" type="Sprite" parent="." index="39"]
 
+editor/display_folded = true
 position = Vector2( 112, 64 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -958,8 +979,9 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles40" type="Sprite" parent="." index="40"]
+[node name="UPSPlateau SW" type="Sprite" parent="." index="40"]
 
+editor/display_folded = true
 position = Vector2( 0, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -968,7 +990,7 @@ frame = 40
 region_enabled = true
 region_rect = Rect2( 0, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles40" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateau SW" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -978,13 +1000,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles40/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateau SW/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles41" type="Sprite" parent="." index="41"]
+[node name="UPSPlateauS" type="Sprite" parent="." index="41"]
 
+editor/display_folded = true
 position = Vector2( 16, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -993,7 +1016,7 @@ frame = 41
 region_enabled = true
 region_rect = Rect2( 16, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles41" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauS" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1003,13 +1026,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles41/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauS/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles42" type="Sprite" parent="." index="42"]
+[node name="UPSPlateauSE" type="Sprite" parent="." index="42"]
 
+editor/display_folded = true
 position = Vector2( 32, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1018,7 +1042,7 @@ frame = 42
 region_enabled = true
 region_rect = Rect2( 32, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles42" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSPlateauSE" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1028,13 +1052,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles42/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSPlateauSE/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles43" type="Sprite" parent="." index="43"]
+[node name="UPSStairsDeep" type="Sprite" parent="." index="43"]
 
+editor/display_folded = true
 position = Vector2( 48, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1043,7 +1068,7 @@ frame = 43
 region_enabled = true
 region_rect = Rect2( 48, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles43" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSStairsDeep" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1053,13 +1078,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles43/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSStairsDeep/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles44" type="Sprite" parent="." index="44"]
+[node name="UPSHole" type="Sprite" parent="." index="44"]
 
+editor/display_folded = true
 position = Vector2( 64, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1068,7 +1094,7 @@ frame = 44
 region_enabled = true
 region_rect = Rect2( 64, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles44" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSHole" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1078,13 +1104,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles44/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSHole/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles45" type="Sprite" parent="." index="45"]
+[node name="UPSDoorTrimLeft" type="Sprite" parent="." index="45"]
 
+editor/display_folded = true
 position = Vector2( 80, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1093,7 +1120,7 @@ frame = 45
 region_enabled = true
 region_rect = Rect2( 80, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles45" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSDoorTrimLeft" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1103,13 +1130,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles45/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSDoorTrimLeft/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles46" type="Sprite" parent="." index="46"]
+[node name="NA" type="Sprite" parent="." index="46"]
 
+editor/display_folded = true
 position = Vector2( 96, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1118,8 +1146,10 @@ frame = 46
 region_enabled = true
 region_rect = Rect2( 96, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles46" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="NA" index="0"]
 
+editor/display_folded = true
+visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1128,13 +1158,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles46/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NA/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles47" type="Sprite" parent="." index="47"]
+[node name="UPSDoorTrimRight" type="Sprite" parent="." index="47"]
 
+editor/display_folded = true
 position = Vector2( 112, 80 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1143,7 +1174,7 @@ frame = 47
 region_enabled = true
 region_rect = Rect2( 112, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles47" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSDoorTrimRight" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1153,13 +1184,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles47/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSDoorTrimRight/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles48" type="Sprite" parent="." index="48"]
+[node name="UPSSolidWallNW" type="Sprite" parent="." index="48"]
 
+editor/display_folded = true
 position = Vector2( 0, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1168,7 +1200,7 @@ frame = 48
 region_enabled = true
 region_rect = Rect2( 0, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles48" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallNW" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1178,13 +1210,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles48/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallNW/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles49" type="Sprite" parent="." index="49"]
+[node name="UPSSolidWall4Way" type="Sprite" parent="." index="49"]
 
+editor/display_folded = true
 position = Vector2( 16, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1193,7 +1226,7 @@ frame = 49
 region_enabled = true
 region_rect = Rect2( 16, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles49" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWall4Way" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1203,13 +1236,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles49/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWall4Way/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles50" type="Sprite" parent="." index="50"]
+[node name="UPSSolidWallN" type="Sprite" parent="." index="50"]
 
+editor/display_folded = true
 position = Vector2( 32, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1218,7 +1252,7 @@ frame = 50
 region_enabled = true
 region_rect = Rect2( 32, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles50" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallN" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1228,13 +1262,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles50/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallN/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles51" type="Sprite" parent="." index="51"]
+[node name="UPSSolidWallNE" type="Sprite" parent="." index="51"]
 
+editor/display_folded = true
 position = Vector2( 48, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1243,7 +1278,7 @@ frame = 51
 region_enabled = true
 region_rect = Rect2( 48, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles51" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallNE" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1253,13 +1288,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles51/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallNE/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles52" type="Sprite" parent="." index="52"]
+[node name="UPSSolidPilar" type="Sprite" parent="." index="52"]
 
+editor/display_folded = true
 position = Vector2( 64, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1268,8 +1304,9 @@ frame = 52
 region_enabled = true
 region_rect = Rect2( 64, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles52" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidPilar" index="0"]
 
+visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1278,12 +1315,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles52/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidPilar/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles53" type="Sprite" parent="." index="53"]
+[node name="DoorTop" type="Sprite" parent="." index="53"]
 
 position = Vector2( 80, 96 )
 texture = ExtResource( 1 )
@@ -1293,8 +1330,10 @@ frame = 53
 region_enabled = true
 region_rect = Rect2( 80, 96, 16, 16 )
 
-[node name="tiles54" type="Sprite" parent="." index="54"]
+[node name="NA2" type="Sprite" parent="." index="54"]
 
+editor/display_folded = true
+visible = false
 position = Vector2( 96, 96 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1303,8 +1342,10 @@ frame = 54
 region_enabled = true
 region_rect = Rect2( 96, 96, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles54" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="NA2" index="0"]
 
+visible = false
+position = Vector2( 0, 0.188934 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1313,12 +1354,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles54/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NA2/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles55" type="Sprite" parent="." index="55"]
+[node name="WindowTop" type="Sprite" parent="." index="55"]
 
 position = Vector2( 112, 96 )
 texture = ExtResource( 1 )
@@ -1328,7 +1369,7 @@ frame = 55
 region_enabled = true
 region_rect = Rect2( 112, 96, 16, 16 )
 
-[node name="tiles56" type="Sprite" parent="." index="56"]
+[node name="UPSSolidWallTW" type="Sprite" parent="." index="56"]
 
 editor/display_folded = true
 position = Vector2( 0, 112 )
@@ -1339,7 +1380,7 @@ frame = 56
 region_enabled = true
 region_rect = Rect2( 0, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles56" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallTW" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1349,12 +1390,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles56/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallTW/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles57" type="Sprite" parent="." index="57"]
+[node name="UPSSolidWallFrameLeft" type="Sprite" parent="." index="57"]
 
 editor/display_folded = true
 position = Vector2( 16, 112 )
@@ -1365,7 +1406,7 @@ frame = 57
 region_enabled = true
 region_rect = Rect2( 16, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles57" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallFrameLeft" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1375,13 +1416,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles57/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallFrameLeft/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles58" type="Sprite" parent="." index="58"]
+[node name="UPSSolidWallFrameRight" type="Sprite" parent="." index="58"]
 
+editor/display_folded = true
 position = Vector2( 32, 112 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1390,7 +1432,7 @@ frame = 58
 region_enabled = true
 region_rect = Rect2( 32, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles58" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallFrameRight" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1400,13 +1442,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles58/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallFrameRight/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles59" type="Sprite" parent="." index="59"]
+[node name="UPSSolidWallTE" type="Sprite" parent="." index="59"]
 
+editor/display_folded = true
 position = Vector2( 48, 112 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1415,7 +1458,7 @@ frame = 59
 region_enabled = true
 region_rect = Rect2( 48, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles59" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallTE" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1425,13 +1468,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles59/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallTE/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles60" type="Sprite" parent="." index="60"]
+[node name="UPSWoodDoor" type="Sprite" parent="." index="60"]
 
+editor/display_folded = true
 position = Vector2( 64, 112 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1440,7 +1484,7 @@ frame = 60
 region_enabled = true
 region_rect = Rect2( 64, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles60" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSWoodDoor" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1450,12 +1494,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles60/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSWoodDoor/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles61" type="Sprite" parent="." index="61"]
+[node name="DoorBottom" type="Sprite" parent="." index="61"]
 
 position = Vector2( 80, 112 )
 texture = ExtResource( 1 )
@@ -1465,8 +1509,9 @@ frame = 61
 region_enabled = true
 region_rect = Rect2( 80, 112, 16, 16 )
 
-[node name="tiles62" type="Sprite" parent="." index="62"]
+[node name="UPSLockedDoor" type="Sprite" parent="." index="62"]
 
+editor/display_folded = true
 position = Vector2( 96, 112 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1475,7 +1520,7 @@ frame = 62
 region_enabled = true
 region_rect = Rect2( 96, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles62" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSLockedDoor" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1485,12 +1530,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles62/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSLockedDoor/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles63" type="Sprite" parent="." index="63"]
+[node name="WindownBottom" type="Sprite" parent="." index="63"]
 
 position = Vector2( 112, 112 )
 texture = ExtResource( 1 )
@@ -1500,8 +1545,9 @@ frame = 63
 region_enabled = true
 region_rect = Rect2( 112, 112, 16, 16 )
 
-[node name="tiles64" type="Sprite" parent="." index="64"]
+[node name="UPSSolidWallVertical" type="Sprite" parent="." index="64"]
 
+editor/display_folded = true
 position = Vector2( 0, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1510,7 +1556,7 @@ frame = 64
 region_enabled = true
 region_rect = Rect2( 0, 128, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles64" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallVertical" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1520,13 +1566,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles64/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallVertical/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles65" type="Sprite" parent="." index="65"]
+[node name="UPSSolidWallFrameBottom" type="Sprite" parent="." index="65"]
 
+editor/display_folded = true
 position = Vector2( 16, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1535,7 +1582,7 @@ frame = 65
 region_enabled = true
 region_rect = Rect2( 16, 128, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles65" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallFrameBottom" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1545,13 +1592,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles65/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallFrameBottom/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="tiles66" type="Sprite" parent="." index="66"]
+[node name="UPSSolidWallFrame" type="Sprite" parent="." index="66"]
 
+editor/display_folded = true
 position = Vector2( 32, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1560,7 +1608,7 @@ frame = 66
 region_enabled = true
 region_rect = Rect2( 32, 128, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles66" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UPSSolidWallFrame" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1570,13 +1618,14 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tiles66/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UPSSolidWallFrame/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles67" type="Sprite" parent="." index="67"]
 
+editor/display_folded = true
 position = Vector2( 48, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1602,6 +1651,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles68" type="Sprite" parent="." index="68"]
 
+editor/display_folded = true
 position = Vector2( 64, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1637,6 +1687,7 @@ region_rect = Rect2( 80, 128, 16, 16 )
 
 [node name="tiles70" type="Sprite" parent="." index="70"]
 
+editor/display_folded = true
 position = Vector2( 96, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1662,6 +1713,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles71" type="Sprite" parent="." index="71"]
 
+editor/display_folded = true
 position = Vector2( 112, 128 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1687,6 +1739,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles72" type="Sprite" parent="." index="72"]
 
+editor/display_folded = true
 position = Vector2( 0, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1712,6 +1765,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles73" type="Sprite" parent="." index="73"]
 
+editor/display_folded = true
 position = Vector2( 16, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1737,6 +1791,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles74" type="Sprite" parent="." index="74"]
 
+editor/display_folded = true
 position = Vector2( 32, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1762,6 +1817,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles75" type="Sprite" parent="." index="75"]
 
+editor/display_folded = true
 position = Vector2( 48, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1787,6 +1843,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles76" type="Sprite" parent="." index="76"]
 
+editor/display_folded = true
 position = Vector2( 64, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1812,6 +1869,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles77" type="Sprite" parent="." index="77"]
 
+editor/display_folded = true
 position = Vector2( 80, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1837,6 +1895,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles78" type="Sprite" parent="." index="78"]
 
+editor/display_folded = true
 position = Vector2( 96, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1862,6 +1921,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles79" type="Sprite" parent="." index="79"]
 
+editor/display_folded = true
 position = Vector2( 112, 144 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1887,6 +1947,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles81" type="Sprite" parent="." index="80"]
 
+editor/display_folded = true
 position = Vector2( 16, 160 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1912,6 +1973,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles82" type="Sprite" parent="." index="81"]
 
+editor/display_folded = true
 position = Vector2( 32, 160 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1937,6 +1999,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles83" type="Sprite" parent="." index="82"]
 
+editor/display_folded = true
 position = Vector2( 48, 160 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -1962,6 +2025,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="tiles80" type="Sprite" parent="." index="83"]
 
+editor/display_folded = true
 position = Vector2( 0, 160 )
 texture = ExtResource( 1 )
 vframes = 16
