@@ -1,8 +1,10 @@
 extends "../pawn.gd"
 
 onready var Grid = get_parent()
+export(float, 0, 10) var movement_speed = 1
 
 func _ready():
+	type = ACTOR
 	update_input_direction(Vector2(1, 0))
 	$"AnimationPlayer".play("idle")
 	
@@ -34,11 +36,18 @@ func bump():
 	
 func move_to(target_position):
 	set_process(false)
-	$"AnimationPlayer".play("walk-right")
 	var move_direction = (target_position - position).normalized()
-	$Tween.interpolate_property($Pivot, "position", -move_direction * 16, Vector2(), $AnimationPlayer.current_animation_length, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	if move_direction.y < 0:
+		$"AnimationPlayer".play("walk-up")
+	else:
+		$"AnimationPlayer".play("walk-right")
+	$Pivot.position = -move_direction * 16
+	$AnimationPlayer.playback_speed = movement_speed
+	var move_speed = $AnimationPlayer.current_animation_length / movement_speed
+	$Tween.interpolate_property($Pivot, "position", $Pivot.position, Vector2(), move_speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	position = target_position
 	$Tween.start()
 	yield($AnimationPlayer, "animation_finished")
+	$"AnimationPlayer".playback_speed = 1
 	$"AnimationPlayer".play("idle")
 	set_process(true)

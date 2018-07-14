@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/spritesheet.png" type="Texture" id=2]
@@ -79,6 +79,25 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="Animation" id=7]
+
+resource_name = "idle-up"
+length = 0.8
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 18, 20, 21 ]
+}
+
 [sub_resource type="Animation" id=5]
 
 resource_name = "walk-right"
@@ -120,8 +139,8 @@ tracks/0/keys = {
 [node name="player" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 type = null
+movement_speed = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -129,11 +148,12 @@ root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 0.8
+playback_speed = 1.0
 anims/attack-down = SubResource( 1 )
 anims/attack-right = SubResource( 2 )
 anims/attack-up = SubResource( 3 )
 anims/idle = SubResource( 4 )
+anims/idle-up = SubResource( 7 )
 anims/walk-right = SubResource( 5 )
 anims/walk-up = SubResource( 6 )
 blend_times = [  ]
@@ -150,6 +170,7 @@ playback/speed = 1.0
 
 [node name="Pivot" type="Position2D" parent="." index="2"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Pivot" index="0"]
@@ -158,7 +179,7 @@ position = Vector2( 0, -12 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 13
+frame = 18
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="Pivot" index="1"]
