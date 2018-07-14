@@ -1,4 +1,4 @@
-extends Contol
+extends Control
 
 var scene_path_to_load
 
@@ -11,4 +11,4 @@ func _ready():
 
 func _on_FadeIn_fade_finished():
 	$FadeIn.hide()
-	
+	get_tree().change_scene(scene_path_to_load)

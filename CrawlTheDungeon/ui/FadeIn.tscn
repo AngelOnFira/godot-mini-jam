@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="FadeIn" type="ColorRect" index="0"]
+[node name="FadeIn" type="ColorRect"]
 
 visible = false
 anchor_left = 0.0
