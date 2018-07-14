@@ -72,7 +72,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="player" parent="Map" index="0" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 40, 136 )
 movement_speed = 1.5
 
