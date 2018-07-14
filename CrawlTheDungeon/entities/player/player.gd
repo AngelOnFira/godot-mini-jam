@@ -2,22 +2,40 @@ extends "../pawn.gd"
 
 onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
+var prev_direction = Vector2(1,0)
 
 func _ready():
 	type = ACTOR
-	update_input_direction(Vector2(1, 0))
+	update_input_direction(prev_direction)
 	$"AnimationPlayer".play("idle")
 	
 func _process(delta):
 	var input_direction = get_input_direction()
-	if not input_direction:
-		return
-	update_input_direction(input_direction)
-	var target_position = Grid.request_move(self, input_direction)
-	if target_position:
-		move_to(target_position)
+	if input_direction:
+		update_input_direction(input_direction)
+		prev_direction = input_direction
+		var target_position = Grid.request_move(self, input_direction)
+		if target_position:
+			move_to(target_position)
+		else:
+			bump()
+	elif Input.is_action_just_pressed("ui_select"):
+		attack()
+	
+func attack():
+	set_process(false)
+	if prev_direction.y > 0:
+		$AnimationPlayer.play("attack-down")
+	elif prev_direction.y < 0:
+		$AnimationPlayer.play("attack-up")
 	else:
-		bump()
+		$AnimationPlayer.play("attack-right")
+	yield($AnimationPlayer, "animation_finished")
+	if prev_direction.y < 0:
+		$AnimationPlayer.play("idle-up")
+	else:
+		$"AnimationPlayer".play("idle")
+	set_process(true)
 	
 func get_input_direction():
 	var y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
@@ -50,5 +68,8 @@ func move_to(target_position):
 	$Tween.start()
 	yield($AnimationPlayer, "animation_finished")
 	$"AnimationPlayer".playback_speed = 1
-	$"AnimationPlayer".play("idle")
+	if prev_direction.y < 0:
+		$AnimationPlayer.play("idle-up")
+	else:
+		$"AnimationPlayer".play("idle")
 	set_process(true)

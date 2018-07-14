@@ -134,7 +134,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21 ]
 }
 
-[node name="player" type="Node2D" index="0"]
+[node name="player" type="Node2D"]
 
 script = ExtResource( 1 )
 type = null
@@ -176,7 +176,7 @@ position = Vector2( 1, -6 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 18
+frame = 45
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="Pivot" index="1"]
