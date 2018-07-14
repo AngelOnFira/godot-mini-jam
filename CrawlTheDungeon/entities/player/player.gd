@@ -36,12 +36,13 @@ func bump():
 	
 func move_to(target_position):
 	set_process(false)
-	var move_direction = (target_position - position).normalized()
+	var move_direction = (target_position - position)
+	
 	if move_direction.y < 0:
 		$"AnimationPlayer".play("walk-up")
 	else:
 		$"AnimationPlayer".play("walk-right")
-	$Pivot.position = -move_direction * 16
+	$Pivot.position = -move_direction
 	$AnimationPlayer.playback_speed = movement_speed
 	var move_speed = $AnimationPlayer.current_animation_length / movement_speed
 	$Tween.interpolate_property($Pivot, "position", $Pivot.position, Vector2(), move_speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
