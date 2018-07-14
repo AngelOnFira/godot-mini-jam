@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=1]
+
+[node name="World" type="Node" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65537, 27, 0, 65538, 41, 0, 65539, 41, 0, 65540, 41, 0, 65541, 41, 0, 65542, 41, 0, 65543, 41, 0, 131073, 34, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 196609, 34, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 1, 0, 196614, 8, 0, 196615, 87, 0, 262145, 34, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, -1073741823, 0, 262150, -1610612727, 0, 262151, 9, 0, 262153, 84, 0, 262154, 84, 0, 262155, 84, 0, 262156, 84, 0, 262157, 84, 0, 262158, 84, 0, 262159, 84, 0, 262160, 84, 0, 327681, 34, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, -1610612736, 0, 327687, 0, 0, 327696, -1610612736, 0, 393217, 72, 0, 393218, 41, 0, 393219, 41, 0, 393220, 41, 0, 393221, 41, 0, 393222, 41, 0, 393223, 41, 0 )
+_sections_unfolded = [ "Cell" ]
+
+

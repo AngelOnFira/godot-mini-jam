@@ -100,7 +100,7 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
 [node name="Node" type="Node" index="0"]
 
-[node name="tiles0" type="Sprite" parent="." index="0"]
+[node name="PSTile" type="Sprite" parent="." index="0"]
 
 editor/display_folded = true
 texture = ExtResource( 1 )
@@ -109,12 +109,12 @@ hframes = 8
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles0" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile" index="0"]
 
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="tiles1" type="Sprite" parent="." index="1"]
+[node name="PSTile45" type="Sprite" parent="." index="1"]
 
 editor/display_folded = true
 position = Vector2( 16, 0 )
@@ -125,12 +125,12 @@ frame = 1
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles1" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile45" index="0"]
 
 navpoly = SubResource( 2 )
 enabled = true
 
-[node name="tiles2" type="Sprite" parent="." index="2"]
+[node name="PSTile180" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
 position = Vector2( 32, 0 )
@@ -141,12 +141,12 @@ frame = 2
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles2" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile180" index="0"]
 
 navpoly = SubResource( 3 )
 enabled = true
 
-[node name="tiles3" type="Sprite" parent="." index="3"]
+[node name="PSTile225" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
 position = Vector2( 48, 0 )
@@ -157,12 +157,12 @@ frame = 3
 region_enabled = true
 region_rect = Rect2( 48, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles3" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile225" index="0"]
 
 navpoly = SubResource( 4 )
 enabled = true
 
-[node name="tiles4" type="Sprite" parent="." index="4"]
+[node name="PSFragmentSE" type="Sprite" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 64, 0 )
@@ -173,13 +173,14 @@ frame = 4
 region_enabled = true
 region_rect = Rect2( 64, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles4" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentSE" index="0"]
 
 navpoly = SubResource( 5 )
 enabled = true
 
-[node name="tiles5" type="Sprite" parent="." index="5"]
+[node name="PSFragmentSW" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 80, 0 )
 texture = ExtResource( 1 )
 vframes = 16
@@ -188,12 +189,12 @@ frame = 5
 region_enabled = true
 region_rect = Rect2( 80, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles5" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentSW" index="0"]
 
 navpoly = SubResource( 6 )
 enabled = true
 
-[node name="tiles8" type="Sprite" parent="." index="6"]
+[node name="PSCracked1" type="Sprite" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 0, 16 )
@@ -204,12 +205,12 @@ frame = 8
 region_enabled = true
 region_rect = Rect2( 0, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles8" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSCracked1" index="0"]
 
 navpoly = SubResource( 7 )
 enabled = true
 
-[node name="tiles9" type="Sprite" parent="." index="7"]
+[node name="PSTile90" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 16, 16 )
@@ -220,12 +221,12 @@ frame = 9
 region_enabled = true
 region_rect = Rect2( 16, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles9" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile90" index="0"]
 
 navpoly = SubResource( 8 )
 enabled = true
 
-[node name="tiles10" type="Sprite" parent="." index="8"]
+[node name="PSNoTile" type="Sprite" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 32, 16 )
@@ -236,7 +237,7 @@ frame = 10
 region_enabled = true
 region_rect = Rect2( 32, 16, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tiles10" index="0"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSNoTile" index="0"]
 
 navpoly = SubResource( 9 )
 enabled = true
