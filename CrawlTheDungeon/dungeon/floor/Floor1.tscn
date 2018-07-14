@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=1]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://dungeon/grid.gd" type="Script" id=2]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node" index="0"]
 
@@ -45,10 +46,12 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 65537, 48, 0, 65538, 50, 0, 65539, 50, 0, 65540, 50, 0, 65541, 50, 0, 65542, 50, 0, 65543, 50, 0, 65544, 50, 0, 65545, 50, 0, 65546, 50, 0, 65547, 50, 0, 65548, 50, 0, 65549, 51, 0, 131073, 64, 0, 131085, 64, 0, 196609, 64, 0, 196621, 64, 0, 262145, 67, 0, 262157, 64, 0, 327681, 64, 0, 327685, 58, 0, 327686, 68, 0, 327687, 69, 0, 327688, 70, 0, 327689, 50, 0, 327690, 50, 0, 327691, 50, 0, 327692, 50, 0, 327693, 59, 0, 393217, 64, 0, 393229, 64, 0, 458753, 64, 0, 458765, 67, 0, 524289, 64, 0, 524294, 90, 0, 524295, 3, 0, 524301, 64, 0, 589825, 64, 0, 589831, 15, 0, 589837, 64, 0, 655361, 64, 0, 655373, 64, 0, 720897, 72, 0, 720898, 50, 0, 720899, 50, 0, 720900, 50, 0, 720901, 50, 0, 720902, 50, 0, 720903, 50, 0, 720904, 50, 0, 720905, 50, 0, 720906, 50, 0, 720907, 50, 0, 720908, 50, 0, 720909, 75, 0 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="player" parent="Map" index="0" instance=ExtResource( 2 )]
+[node name="player" parent="Map" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 40, 50 )
+position = Vector2( 40, 120 )
+type = 0
 
 
