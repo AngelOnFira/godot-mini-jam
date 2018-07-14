@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://menus/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://ui/button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/button.gd" type="Script" id=3]
+[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=4]
+
 
 [node name="TitleScreen" type="Control" index="0"]
 
@@ -69,30 +71,29 @@ alignment = 0
 [node name="NewGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 2 )]
 
 rect_scale = Vector2( 1, 1 )
+script = ExtResource( 3 )
+scene_to_load = null
 
 [node name="Label" parent="Menu/CenterRow/Buttons/NewGame" index="0"]
 
 margin_right = 343.0
 text = "Start"
 
-[node name="NewGame2" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 2 )]
+[node name="ExitGame" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 2 )]
 
 margin_top = 110.0
 margin_bottom = 216.0
 rect_scale = Vector2( 1, 1 )
+script = ExtResource( 3 )
+scene_to_load = null
 
-[node name="Label" parent="Menu/CenterRow/Buttons/NewGame2" index="0"]
-
-text = "Exit"
-
-[node name="FadeIn" parent="." index="1" instance=ExtResource( 3 )]
+[node name="FadeIn" parent="." index="1" instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 
-[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame2" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitGame" to="." method="_on_NewGame_pressed"]
 
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
 
 [editable path="Menu/CenterRow/Buttons/NewGame"]
-[editable path="Menu/CenterRow/Buttons/NewGame2"]
