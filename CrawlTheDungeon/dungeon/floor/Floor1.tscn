@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=1]
 [ext_resource path="res://dungeon/grid.gd" type="Script" id=2]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node" index="0"]
 
@@ -72,7 +73,13 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="player" parent="Map" index="0" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 40, 136 )
+movement_speed = 1.5
+
+[node name="slime" parent="Map" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 152, 136 )
 movement_speed = 1.5
 
 
