@@ -7,10 +7,7 @@ path="res://.import/background.png-91c0376f4363dabf6b40d7c822b521b2.stex"
 [deps]
 
 source_file="res://ui/gui/Hearts/PNG/basic/background.png"
-source_md5="0ff5f6de7ab9df477cf929297861e500"
-
 dest_files=[ "res://.import/background.png-91c0376f4363dabf6b40d7c822b521b2.stex" ]
-dest_md5="a2cd87f7079d6b1eafc0134fe8db7cd3"
 
 [params]
 

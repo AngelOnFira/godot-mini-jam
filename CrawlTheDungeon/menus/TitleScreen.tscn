@@ -125,7 +125,7 @@ position = Vector2( 767.538, 341.755 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform" ]
 damage_roll = null
-health = 25
+health = 10
 
 [node name="FadeIn" parent="." index="3" instance=ExtResource( 4 )]
 

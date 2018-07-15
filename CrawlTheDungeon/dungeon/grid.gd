@@ -29,11 +29,12 @@ func request_move(pawn, direction):
 		ACTOR:
 			var pawn_name = get_cell_pawn(cell_target).name
 			
-func request_attack(positions):
+func request_attack(positions, global=true):
 	var successful_hits = []
 
 	for attack_location in positions:
-		var cell = world_to_map(attack_location.to_global(attack_location.position))
+		var loc = attack_location.position if global else attack_location.to_global(attack_location.position)
+		var cell = world_to_map(loc)
 		print(cell)
 		var cell_target_type = get_cellv(cell)
 		match cell_target_type:
@@ -52,8 +53,9 @@ func _on_died(pawn, loot=[]):
 	if len(loot) > 0: 
 		print(loot[0].name)
 		set_cellv(cell, OBJECT)
-	loot[0].position = pawn.position
-	add_child(loot[0])
+	for l in loot:
+		l.position = pawn.position
+		add_child(l)
 
 func _on_dealt_damage(location, damage):
 	location.x += 8
@@ -61,3 +63,14 @@ func _on_dealt_damage(location, damage):
 	var cell = world_to_map(location)
 	var pawn = get_cell_pawn(cell)
 	pawn.take_damage(damage)
+	
+func request_surrounding(pawn):
+	var cell = world_to_map(pawn.position)
+	var pawns = []
+	for row in [-1, 0, 1]:
+		for col in [-1, 0, 1]:
+			var target_cell = Vector2(cell.x+col, cell.y+row)
+			var target_pawn = get_cell_pawn(target_cell)
+			if target_pawn:
+				pawns.append(target_pawn)
+	return pawns

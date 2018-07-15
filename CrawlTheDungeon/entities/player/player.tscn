@@ -1,7 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/spritesheet.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=18]
+
+min_value = 2.0
+max_value = 10.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0 ), 0.0, 41.8026, 0, 1, Vector2( 0.23922, 10 ), 0.772425, 0.772425, 0, 0, Vector2( 0.76078, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -41.8026, 0.0, 1, 0 ]
 
 [sub_resource type="Animation" id=1]
 
@@ -21,6 +28,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 40, 41, 42, 43, 44, 45 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -39,6 +58,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 24, 25, 26, 27, 28 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -60,6 +91,37 @@ tracks/0/keys = {
 "values": [ 32, 33, 34, 35, 36, 37 ]
 }
 
+[sub_resource type="Animation" id=17]
+
+resource_name = "die"
+length = 1.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 56, 57, 58, 59, 60, 61 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.179688, 0.179688, 0.179688, 0 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 
 resource_name = "idle"
@@ -77,6 +139,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -97,6 +171,60 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 17, 18, 20, 21 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "take_damage"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51, 52 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.816406, 0.226425, 0.226425, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -114,6 +242,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 9, 10, 11, 12, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -133,6 +273,97 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 16, 17, 18, 19, 20, 21 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Gradient" id=10]
+
+offsets = PoolRealArray( 0, 0.0118343, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.648438, 0.157043, 0.157043, 0.976331, 0.554688, 0.0476685, 0.0476685, 0 )
+
+[sub_resource type="GradientTexture" id=11]
+
+flags = 4
+gradient = SubResource( 10 )
+width = 2048
+
+[sub_resource type="Curve" id=13]
+
+min_value = -200.0
+max_value = 200.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0 ), 0.0, 560.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+
+flags = 4
+width = 2048
+curve = SubResource( 13 )
+
+[sub_resource type="Curve" id=15]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0.0145158, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.875976 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.242187 ), 1.4, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+
+flags = 4
+width = 2048
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_align_y = true
+flag_rotate_y = false
+flag_disable_z = true
+spread = 50.0
+flatness = 0.0
+gravity = Vector3( 0, 120, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.6
+angular_velocity = -20.0
+angular_velocity_random = 0.6
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 50.0
+linear_accel_random = 1.0
+linear_accel_curve = SubResource( 14 )
+radial_accel = 20.0
+radial_accel_random = 1.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 3.0
+scale_random = 0.5
+scale_curve = SubResource( 16 )
+color_ramp = SubResource( 11 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread" ]
 
 [sub_resource type="RectangleShape2D" id=8]
 
@@ -146,9 +377,9 @@ extents = Vector2( 10, 10 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 type = 143
-movement_speed = 1
-damage_roll = null
-health = 25
+movement_speed = 1.5
+damage_roll = SubResource( 18 )
+health = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -160,8 +391,10 @@ playback_speed = 1.0
 anims/attack-down = SubResource( 1 )
 anims/attack-right = SubResource( 2 )
 anims/attack-up = SubResource( 3 )
+anims/die = SubResource( 17 )
 anims/idle = SubResource( 4 )
 anims/idle-up = SubResource( 5 )
+anims/take_damage = SubResource( 9 )
 anims/walk-right = SubResource( 6 )
 anims/walk-up = SubResource( 7 )
 blend_times = [  ]
@@ -190,15 +423,48 @@ _sections_unfolded = [ "Transform" ]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="Pivot" index="0"]
+[node name="Particles2D" type="Particles2D" parent="Pivot" index="0"]
+
+position = Vector2( 0, -5 )
+rotation = 0.785398
+scale = Vector2( -1, 1 )
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.7
+randomness = 0.6
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 12 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+
+[node name="Timer" type="Timer" parent="Pivot/Particles2D" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Sprite" type="Sprite" parent="Pivot" index="1"]
 
 position = Vector2( 1, -6 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-_sections_unfolded = [ "Animation", "Transform" ]
+frame = 56
+_sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility" ]
 
-[node name="Camera2D" type="Camera2D" parent="Pivot" index="1"]
+[node name="Camera2D" type="Camera2D" parent="Pivot" index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -223,7 +489,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="Area2D" type="Area2D" parent="Pivot" index="2" groups=[
+[node name="Area2D" type="Area2D" parent="Pivot" index="3" groups=[
 "player",
 ]]
 
@@ -243,5 +509,7 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 8 )
 
 [node name="Inventory" type="Node" parent="." index="4"]
+
+[connection signal="timeout" from="Pivot/Particles2D/Timer" to="." method="shut_off_emit"]
 
 

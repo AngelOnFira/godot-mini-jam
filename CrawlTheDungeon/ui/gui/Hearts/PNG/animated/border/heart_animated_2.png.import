@@ -7,10 +7,7 @@ path="res://.import/heart_animated_2.png-0a18afd295c700ea0117ee1161453780.stex"
 [deps]
 
 source_file="res://ui/gui/Hearts/PNG/animated/border/heart_animated_2.png"
-source_md5="6ddb2ac32b3f71ffb3217d50f64974fe"
-
 dest_files=[ "res://.import/heart_animated_2.png-0a18afd295c700ea0117ee1161453780.stex" ]
-dest_md5="4dcd5436633f0d8fa14a8220b8a5e675"
 
 [params]
 

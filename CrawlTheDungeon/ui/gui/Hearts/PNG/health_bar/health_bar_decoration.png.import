@@ -7,10 +7,7 @@ path="res://.import/health_bar_decoration.png-8697e367c8c3b057a7897b6a650c7dbb.s
 [deps]
 
 source_file="res://ui/gui/Hearts/PNG/health_bar/health_bar_decoration.png"
-source_md5="afecbbc5e0118e85017fa312e13f0b98"
-
 dest_files=[ "res://.import/health_bar_decoration.png-8697e367c8c3b057a7897b6a650c7dbb.stex" ]
-dest_md5="cfefab19884a616636c8bc14e39e0400"
 
 [params]
 

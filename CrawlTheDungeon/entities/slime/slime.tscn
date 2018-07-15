@@ -1,7 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://entities/slime/slime.gd" type="Script" id=1]
 [ext_resource path="res://entities/slime/spritesheet.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=12]
+
+min_value = 1.0
+max_value = 5.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0 ), 0.0, 6.12414, 0, 1, Vector2( 0.816441, 5 ), 0.350899, 0.350899, 0, 0, Vector2( 1, 0 ), -27.2392, 0.0, 1, 0 ]
 
 [sub_resource type="Animation" id=11]
 
@@ -212,6 +219,8 @@ _sections_unfolded = [ "Visibility" ]
 type = null
 movement_speed = 1
 health = 10
+damage_roll = SubResource( 12 )
+damage = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
