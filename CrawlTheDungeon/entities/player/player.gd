@@ -3,6 +3,11 @@ extends "../pawn.gd"
 onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
 var prev_direction = Vector2(1,0)
+export(Curve) var damage_roll
+export(float, 0, 100) var health = 25
+
+signal dealt_damage
+signal died
 
 func _ready():
 	type = ACTOR
@@ -14,6 +19,7 @@ func _process(delta):
 	if input_direction:
 		update_input_direction(input_direction)
 		prev_direction = input_direction
+		$"WeaponLocations".rotation = prev_direction.angle()
 		var target_position = Grid.request_move(self, input_direction)
 		if target_position:
 			move_to(target_position)
@@ -21,6 +27,10 @@ func _process(delta):
 			bump()
 	elif Input.is_action_just_pressed("ui_select"):
 		attack()
+	if health <= 0:
+		print("<player>: I am le dead.")
+		emit_signal("died", self)
+		queue_free()
 	
 func attack():
 	set_process(false)
@@ -30,12 +40,24 @@ func attack():
 		$AnimationPlayer.play("attack-up")
 	else:
 		$AnimationPlayer.play("attack-right")
+	for damaged_loc in Grid.request_attack($"WeaponLocations".get_children()):
+		var dmg = roll_damage()
+		emit_signal("dealt_damage", damaged_loc, dmg)
+		print("<Player>: DAMAGE: %s" % dmg)
+	
 	yield($AnimationPlayer, "animation_finished")
 	if prev_direction.y < 0:
 		$AnimationPlayer.play("idle-up")
 	else:
 		$"AnimationPlayer".play("idle")
 	set_process(true)
+	
+func roll_damage():
+	# Roll between 0 and 1
+	var dam = randf()
+	# Value along curve
+	return damage_roll.interpolate(dam)
+	
 	
 func get_input_direction():
 	var y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
@@ -73,3 +95,6 @@ func move_to(target_position):
 	else:
 		$"AnimationPlayer".play("idle")
 	set_process(true)
+	
+func take_damage(dmg):
+	health = max(health-dmg, 0)

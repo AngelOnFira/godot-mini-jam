@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/spritesheet.png" type="Texture" id=2]
@@ -134,11 +134,22 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21 ]
 }
 
-[node name="player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="player" type="Node2D" index="0" groups=[
+"player",
+]]
 
 script = ExtResource( 1 )
-type = null
+_sections_unfolded = [ "Transform" ]
+type = 143
 movement_speed = 1
+min_damage = 1
+max_damage = 10
+damage_roll = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -166,7 +177,17 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Pivot" type="Position2D" parent="." index="2"]
+[node name="WeaponLocations" type="Node2D" parent="." index="2"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="WeaponLocations" index="0"]
+
+position = Vector2( 13, 0 )
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Pivot" type="Position2D" parent="." index="3"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -176,7 +197,6 @@ position = Vector2( 1, -6 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 45
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="Pivot" index="1"]
@@ -203,5 +223,24 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="Area2D" type="Area2D" parent="Pivot" index="2" groups=[
+"player",
+]]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Area2D" index="0"]
+
+shape = SubResource( 8 )
 
 

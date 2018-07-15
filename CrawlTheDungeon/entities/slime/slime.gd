@@ -2,13 +2,20 @@ extends "../pawn.gd"
 
 onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
+export(float, 0, 100) var health = 10
+
+signal died
 
 func _ready():
 	type = ACTOR
 	update_input_direction(Vector2(1, 0))
 	$"AnimationPlayer".play("idle")
 	
-func _process(delta):	
+func _process(delta):
+	if health <= 0:
+		print("<slime>: I am le dead.")
+		emit_signal("died", self)
+		queue_free()
 	pass
 
 func act():
@@ -47,3 +54,7 @@ func move_to(target_position):
 	$"AnimationPlayer".playback_speed = 1
 	$"AnimationPlayer".play("idle")
 	set_process(true)
+	
+func take_damage(damage):
+	print("<slime>: Taking %2.2f damage!" % damage)
+	health -= damage
