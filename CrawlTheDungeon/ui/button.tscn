@@ -3,7 +3,7 @@
 [ext_resource path="res://ui/button-large-empty.png" type="Texture" id=1]
 [ext_resource path="res://ui/Fonts/TooMuchInk.tres" type="DynamicFont" id=2]
 
-[node name="Button" type="Button" index="0"]
+[node name="Button" type="Button"]
 
 anchor_left = 0.0
 anchor_top = 0.0
