@@ -3,97 +3,97 @@
 [ext_resource path="res://dungeon/tiles.png" type="Texture" id=1]
 [ext_resource path="res://dungeon/blank_tile.png" type="Texture" id=2]
 
-[sub_resource type="NavigationPolygon" id=139]
+[sub_resource type="NavigationPolygon" id=1]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=140]
+[sub_resource type="NavigationPolygon" id=2]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=146]
+[sub_resource type="NavigationPolygon" id=3]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=148]
+[sub_resource type="NavigationPolygon" id=4]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=143]
+[sub_resource type="NavigationPolygon" id=5]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=144]
+[sub_resource type="NavigationPolygon" id=6]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=145]
+[sub_resource type="NavigationPolygon" id=7]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=149]
+[sub_resource type="NavigationPolygon" id=8]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=147]
+[sub_resource type="NavigationPolygon" id=9]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=141]
+[sub_resource type="NavigationPolygon" id=10]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=150]
+[sub_resource type="NavigationPolygon" id=11]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=151]
+[sub_resource type="NavigationPolygon" id=12]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=152]
+[sub_resource type="NavigationPolygon" id=13]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=142]
+[sub_resource type="NavigationPolygon" id=14]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=153]
+[sub_resource type="NavigationPolygon" id=15]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
-[sub_resource type="NavigationPolygon" id=154]
+[sub_resource type="NavigationPolygon" id=16]
 
 vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
@@ -103,7 +103,6 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
 [node name="PSTile" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 vframes = 16
 hframes = 8
@@ -112,7 +111,7 @@ region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile" index="0"]
 
-navpoly = SubResource( 139 )
+navpoly = SubResource( 1 )
 enabled = true
 
 [node name="PSTile45" type="Sprite" parent="." index="1"]
@@ -128,7 +127,7 @@ region_rect = Rect2( 16, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile45" index="0"]
 
-navpoly = SubResource( 140 )
+navpoly = SubResource( 2 )
 enabled = true
 
 [node name="PSTile90" type="Sprite" parent="." index="2"]
@@ -144,7 +143,7 @@ region_rect = Rect2( 32, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile90" index="0"]
 
-navpoly = SubResource( 146 )
+navpoly = SubResource( 3 )
 enabled = true
 
 [node name="PSTile135" type="Sprite" parent="." index="3"]
@@ -160,7 +159,7 @@ region_rect = Rect2( 48, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile135" index="0"]
 
-navpoly = SubResource( 148 )
+navpoly = SubResource( 4 )
 enabled = true
 
 [node name="PSFragmentSE" type="Sprite" parent="." index="4"]
@@ -176,7 +175,7 @@ region_rect = Rect2( 64, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentSE" index="0"]
 
-navpoly = SubResource( 143 )
+navpoly = SubResource( 5 )
 enabled = true
 
 [node name="PSFragmentSW" type="Sprite" parent="." index="5"]
@@ -192,7 +191,7 @@ region_rect = Rect2( 80, 0, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentSW" index="0"]
 
-navpoly = SubResource( 144 )
+navpoly = SubResource( 6 )
 enabled = true
 
 [node name="PSCracked1" type="Sprite" parent="." index="6"]
@@ -208,7 +207,7 @@ region_rect = Rect2( 0, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSCracked1" index="0"]
 
-navpoly = SubResource( 145 )
+navpoly = SubResource( 7 )
 enabled = true
 
 [node name="PSTile270" type="Sprite" parent="." index="7"]
@@ -224,7 +223,7 @@ region_rect = Rect2( 16, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile270" index="0"]
 
-navpoly = SubResource( 149 )
+navpoly = SubResource( 8 )
 enabled = true
 
 [node name="PSNoTile" type="Sprite" parent="." index="8"]
@@ -240,7 +239,7 @@ region_rect = Rect2( 32, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSNoTile" index="0"]
 
-navpoly = SubResource( 147 )
+navpoly = SubResource( 9 )
 enabled = true
 
 [node name="PSTile180" type="Sprite" parent="." index="9"]
@@ -256,7 +255,7 @@ region_rect = Rect2( 48, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile180" index="0"]
 
-navpoly = SubResource( 141 )
+navpoly = SubResource( 10 )
 enabled = true
 
 [node name="PSFragmentNE" type="Sprite" parent="." index="10"]
@@ -272,7 +271,7 @@ region_rect = Rect2( 64, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentNE" index="0"]
 
-navpoly = SubResource( 150 )
+navpoly = SubResource( 11 )
 enabled = true
 
 [node name="PSFragmentNW" type="Sprite" parent="." index="11"]
@@ -288,7 +287,7 @@ region_rect = Rect2( 80, 16, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSFragmentNW" index="0"]
 
-navpoly = SubResource( 151 )
+navpoly = SubResource( 12 )
 enabled = true
 
 [node name="PSCracked2" type="Sprite" parent="." index="12"]
@@ -304,7 +303,7 @@ region_rect = Rect2( 0, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSCracked2" index="0"]
 
-navpoly = SubResource( 152 )
+navpoly = SubResource( 13 )
 enabled = true
 
 [node name="PSTile225" type="Sprite" parent="." index="13"]
@@ -320,7 +319,7 @@ region_rect = Rect2( 16, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTile225" index="0"]
 
-navpoly = SubResource( 142 )
+navpoly = SubResource( 14 )
 enabled = true
 
 [node name="PSTileBroken" type="Sprite" parent="." index="14"]
@@ -336,7 +335,7 @@ region_rect = Rect2( 32, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTileBroken" index="0"]
 
-navpoly = SubResource( 153 )
+navpoly = SubResource( 15 )
 enabled = true
 
 [node name="PSTileVertical" type="Sprite" parent="." index="15"]
@@ -352,7 +351,7 @@ region_rect = Rect2( 48, 32, 16, 16 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="PSTileVertical" index="0"]
 
-navpoly = SubResource( 154 )
+navpoly = SubResource( 16 )
 enabled = true
 
 [node name="UPSUpperLadder" type="Sprite" parent="." index="16"]
