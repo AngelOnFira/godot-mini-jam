@@ -67,7 +67,6 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -103,7 +102,6 @@ _sections_unfolded = [ "Rect", "custom_constants" ]
 [node name="StartGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 2 )]
 
 rect_scale = Vector2( 1, 1 )
-scene_to_load = "res://dungeon/floor/Floor1.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/StartGame" index="0"]
 
@@ -114,7 +112,6 @@ text = "Start"
 margin_top = 110.0
 margin_bottom = 216.0
 rect_scale = Vector2( 1, 1 )
-scene_to_load = "res://menus/ExitGame.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/ExitGame" index="0"]
 
@@ -122,6 +119,7 @@ text = "Exit"
 
 [node name="player" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 767.538, 341.755 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform" ]
@@ -129,6 +127,10 @@ damage_roll = null
 health = 25
 
 [node name="FadeIn" parent="." index="3" instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
 
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
