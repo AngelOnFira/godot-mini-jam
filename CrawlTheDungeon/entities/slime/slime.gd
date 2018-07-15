@@ -3,6 +3,7 @@ extends "../pawn.gd"
 onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
 export(float, 0, 100) var health = 10
+var coin_scene = preload("res://entities/objects/coin.tscn")
 
 signal died
 
@@ -14,11 +15,16 @@ func _ready():
 	
 func _process(delta):
 	if health <= 0:
-		print("<slime>: I am le dead.")
-		emit_signal("died", self)
-		queue_free()
-	pass
+		die()
 
+func die():
+	set_process(false)
+	print("<slime>: I am le dead.")
+	$ActionTimer.stop()
+	$AnimationPlayer.play("die")
+	yield($AnimationPlayer, "animation_finished")
+	emit_signal("died", self, get_loot())
+	queue_free()
 func act():
 	var input_direction = get_input_direction()
 	if not input_direction:
@@ -68,3 +74,9 @@ func emit_blood():
 func shut_off_emit():
 	$Pivot/Particles2D.emitting = false
 	
+func get_loot():
+	var roll = randf()
+	var loot = []
+	if roll < 1:
+		loot.append(coin_scene.instance())
+	return loot

@@ -2492,11 +2492,11 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 145/name = "object"
 145/texture = ExtResource( 2 )
 145/tex_offset = Vector2( 0, 0 )
-145/modulate = Color( 0.46875, 0.2948, 0.2948, 0.502784 )
+145/modulate = Color( 0.855469, 0.778715, 0.153717, 0.502784 )
 145/region = Rect2( 0, 0, 16, 16 )
 145/is_autotile = false
 145/occluder_offset = Vector2( 8, 8 )
 145/navigation_offset = Vector2( 8, 8 )
 145/shapes = [  ]
-_sections_unfolded = [ "1", "143", "39" ]
+_sections_unfolded = [ "145", "39" ]
 

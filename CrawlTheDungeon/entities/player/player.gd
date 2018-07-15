@@ -98,3 +98,8 @@ func move_to(target_position):
 	
 func take_damage(dmg):
 	health = max(health-dmg, 0)
+	
+func pickup(obj):
+	obj.visible = false
+	$Inventory.add_child(obj)
+	print("<player>: Picked up [%s]. Inventory now contains:\n\t%s" % [obj.name, $Inventory.get_children()])

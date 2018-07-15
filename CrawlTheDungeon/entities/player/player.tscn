@@ -242,4 +242,6 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 8 )
 
+[node name="Inventory" type="Node" parent="." index="4"]
+
 

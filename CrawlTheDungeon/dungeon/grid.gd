@@ -21,8 +21,10 @@ func request_move(pawn, direction):
 			print('%s moved to %s' % [pawn.name, cell_target])
 			return update_pawn_position(pawn, cell_start, cell_target)
 		OBJECT:
+			if !pawn.is_in_group("player"): return
 			var object_pawn = get_cell_pawn(cell_target)
-			object_pawn.queue_free()
+			object_pawn.collect()
+			pawn.pickup(object_pawn.duplicate(true))
 			return update_pawn_position(pawn, cell_start, cell_target)
 		ACTOR:
 			var pawn_name = get_cell_pawn(cell_target).name
@@ -44,9 +46,14 @@ func update_pawn_position(pawn, cell_start, cell_target):
 	set_cellv(cell_start, EMPTY)
 	return map_to_world(cell_target) + cell_size/2
 
-func _on_died(pawn):
+func _on_died(pawn, loot=[]):
 	var cell = world_to_map(pawn.position)
 	set_cellv(cell, EMPTY)
+	if len(loot) > 0: 
+		print(loot[0].name)
+		set_cellv(cell, OBJECT)
+	loot[0].position = pawn.position
+	add_child(loot[0])
 
 func _on_dealt_damage(location, damage):
 	location.x += 8
