@@ -2,12 +2,11 @@
 
 [ext_resource path="res://menus/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://ui/button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/player/playerMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=4]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -49,7 +48,6 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "
 
 [node name="Menu" type="VBoxContainer" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 0.0
@@ -119,15 +117,21 @@ rect_scale = Vector2( 1, 1 )
 
 text = "Exit"
 
-[node name="player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="FadeIn" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 767.538, 341.755 )
-scale = Vector2( 10, 10 )
-_sections_unfolded = [ "Transform" ]
-damage_roll = null
-health = 10
+[node name="player" parent="." index="3" instance=ExtResource( 4 )]
 
-[node name="FadeIn" parent="." index="3" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 719.487, 333.89 )
+scale = Vector2( 10.5728, 10.5728 )
+
+[node name="Camera2D" parent="player/Pivot" index="2"]
+
+current = false
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
 
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
