@@ -4,7 +4,7 @@ onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
 var prev_direction = Vector2(1,0)
 export(Curve) var damage_roll
-export(float, 0, 100) var health = 25
+export(float, 0, 100) var health = 10
 
 signal dealt_damage
 signal died
@@ -13,6 +13,7 @@ func _ready():
 	type = ACTOR
 	update_input_direction(prev_direction)
 	$"AnimationPlayer".play("idle")
+	$"Pivot/Particles2D/Timer".wait_time = $"Pivot/Particles2D".lifetime
 	
 func _process(delta):
 	var input_direction = get_input_direction()
@@ -28,9 +29,15 @@ func _process(delta):
 	elif Input.is_action_just_pressed("ui_select"):
 		attack()
 	if health <= 0:
-		print("<player>: I am le dead.")
-		emit_signal("died", self)
-		queue_free()
+		die()
+	
+func die():
+	set_process(false)
+	print("<player>: I am le dead.")
+	emit_signal("died", self)
+	$AnimationPlayer.play("die")
+	yield($AnimationPlayer, "animation_finished")
+	visible = false
 	
 func attack():
 	set_process(false)
@@ -40,7 +47,7 @@ func attack():
 		$AnimationPlayer.play("attack-up")
 	else:
 		$AnimationPlayer.play("attack-right")
-	for damaged_loc in Grid.request_attack($"WeaponLocations".get_children()):
+	for damaged_loc in Grid.request_attack($"WeaponLocations".get_children(), false):
 		var dmg = roll_damage()
 		emit_signal("dealt_damage", damaged_loc, dmg)
 		print("<Player>: DAMAGE: %s" % dmg)
@@ -97,4 +104,19 @@ func move_to(target_position):
 	set_process(true)
 	
 func take_damage(dmg):
+	print("<player>: Taking %2.2f damage!" % dmg)
+	#$AnimationPlayer.play("take_damage")
 	health = max(health-dmg, 0)
+	$AnimationPlayer.play("take_damage")
+	$Pivot/Particles2D.emitting = true
+	$"Pivot/Particles2D/Timer".start()
+	yield($AnimationPlayer, "animation_finished")
+	$AnimationPlayer.play("idle")
+	
+func shut_off_emit():
+	$Pivot/Particles2D.emitting = false
+	
+func pickup(obj):
+	obj.visible = false
+	$Inventory.add_child(obj)
+	print("<player>: Picked up [%s]. Inventory now contains:\n\t%s" % [obj.name, $Inventory.get_children()])

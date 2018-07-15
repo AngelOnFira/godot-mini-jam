@@ -21,17 +21,20 @@ func request_move(pawn, direction):
 			print('%s moved to %s' % [pawn.name, cell_target])
 			return update_pawn_position(pawn, cell_start, cell_target)
 		OBJECT:
+			if !pawn.is_in_group("player"): return
 			var object_pawn = get_cell_pawn(cell_target)
-			object_pawn.queue_free()
+			object_pawn.collect()
+			pawn.pickup(object_pawn.duplicate(true))
 			return update_pawn_position(pawn, cell_start, cell_target)
 		ACTOR:
 			var pawn_name = get_cell_pawn(cell_target).name
 			
-func request_attack(positions):
+func request_attack(positions, global=true):
 	var successful_hits = []
 
 	for attack_location in positions:
-		var cell = world_to_map(attack_location.to_global(attack_location.position))
+		var loc = attack_location.position if global else attack_location.to_global(attack_location.position)
+		var cell = world_to_map(loc)
 		print(cell)
 		var cell_target_type = get_cellv(cell)
 		match cell_target_type:
@@ -44,9 +47,15 @@ func update_pawn_position(pawn, cell_start, cell_target):
 	set_cellv(cell_start, EMPTY)
 	return map_to_world(cell_target) + cell_size/2
 
-func _on_died(pawn):
+func _on_died(pawn, loot=[]):
 	var cell = world_to_map(pawn.position)
 	set_cellv(cell, EMPTY)
+	if len(loot) > 0: 
+		print(loot[0].name)
+		set_cellv(cell, OBJECT)
+	for l in loot:
+		l.position = pawn.position
+		add_child(l)
 
 func _on_dealt_damage(location, damage):
 	location.x += 8
@@ -54,3 +63,14 @@ func _on_dealt_damage(location, damage):
 	var cell = world_to_map(location)
 	var pawn = get_cell_pawn(cell)
 	pawn.take_damage(damage)
+	
+func request_surrounding(pawn):
+	var cell = world_to_map(pawn.position)
+	var pawns = []
+	for row in [-1, 0, 1]:
+		for col in [-1, 0, 1]:
+			var target_cell = Vector2(cell.x+col, cell.y+row)
+			var target_pawn = get_cell_pawn(target_cell)
+			if target_pawn:
+				pawns.append(target_pawn)
+	return pawns

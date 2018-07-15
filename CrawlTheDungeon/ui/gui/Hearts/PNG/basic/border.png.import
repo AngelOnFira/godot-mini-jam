@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet.png-d3ddd762838fb1e41c5e6331c9e716d5.stex"
+path="res://.import/border.png-47d51987798a8dd2854f49962fa2f1c9.stex"
 
 [deps]
 
-source_file="res://entities/player/spritesheet.png"
-dest_files=[ "res://.import/spritesheet.png-d3ddd762838fb1e41c5e6331c9e716d5.stex" ]
+source_file="res://ui/gui/Hearts/PNG/basic/border.png"
+dest_files=[ "res://.import/border.png-47d51987798a8dd2854f49962fa2f1c9.stex" ]
 
 [params]
 
@@ -16,10 +16,10 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

@@ -2,15 +2,9 @@
 
 [ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=1]
 [ext_resource path="res://dungeon/grid.gd" type="Script" id=2]
-[ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=4]
-
-[sub_resource type="Curve" id=1]
-
-min_value = 1.0
-max_value = 10.0
-bake_resolution = 100
-_data = [ Vector2( 0, 0 ), 0.0, 19.9418, 0, 1, Vector2( 0.501458, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -20.0585, 0.0, 1, 0 ]
+[ext_resource path="res://entities/objects/coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node" index="0"]
 
@@ -78,22 +72,70 @@ tile_data = PoolIntArray( 65537, 48, 0, 65538, 50, 0, 65539, 50, 0, 65540, 50, 0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="slime" parent="Map" index="0" groups=[
+[node name="Coin" parent="Map" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 168, 40 )
+
+[node name="Coin4" parent="Map" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 88, 136 )
+
+[node name="Coin2" parent="Map" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 168, 72 )
+
+[node name="Coin3" parent="Map" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 152, 56 )
+
+[node name="slime4" parent="Map" index="4" groups=[
 "enemy",
-] instance=ExtResource( 3 )]
+] instance=ExtResource( 4 )]
 
-position = Vector2( 152, 136 )
+position = Vector2( 56, 56 )
 movement_speed = 1.5
-health = 10
 
-[node name="player" parent="Map" index="1" instance=ExtResource( 4 )]
+[node name="slime5" parent="Map" index="5" groups=[
+"enemy",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 104, 56 )
+movement_speed = 1.5
+
+[node name="slime6" parent="Map" index="6" groups=[
+"enemy",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 200, 136 )
+movement_speed = 1.5
+
+[node name="slime7" parent="Map" index="7" groups=[
+"enemy",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 184, 56 )
+movement_speed = 1.5
+
+[node name="player" parent="Map" index="8" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 position = Vector2( 40, 136 )
-damage_roll = SubResource( 1 )
-health = 25
 
-[connection signal="died" from="Map/slime" to="Map" method="_on_died"]
+[connection signal="dealt_damage" from="Map/slime4" to="Map" method="_on_dealt_damage"]
+
+[connection signal="died" from="Map/slime4" to="Map" method="_on_died"]
+
+[connection signal="dealt_damage" from="Map/slime5" to="Map" method="_on_dealt_damage"]
+
+[connection signal="died" from="Map/slime5" to="Map" method="_on_died"]
+
+[connection signal="dealt_damage" from="Map/slime6" to="Map" method="_on_dealt_damage"]
+
+[connection signal="died" from="Map/slime6" to="Map" method="_on_died"]
+
+[connection signal="dealt_damage" from="Map/slime7" to="Map" method="_on_dealt_damage"]
+
+[connection signal="died" from="Map/slime7" to="Map" method="_on_died"]
 
 [connection signal="dealt_damage" from="Map/player" to="Map" method="_on_dealt_damage"]
 
