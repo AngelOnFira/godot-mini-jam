@@ -5,7 +5,6 @@ func _ready():
 	type = OBJECT
 	add_to_group("coin")
 	$AnimationPlayer.play("spin")
-	print("This Coin is in ", get_groups())
 	
 func collect(pawn):
 	$AnimationPlayer.play("collect")

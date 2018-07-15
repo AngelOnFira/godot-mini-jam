@@ -9,7 +9,7 @@ export(int, 0, 4) var health = 4
 signal dealt_damage
 signal died
 signal take_damage
-signal grab_coins
+signal grab_coin
 
 func _ready():
 	type = ACTOR

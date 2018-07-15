@@ -12,5 +12,6 @@ func _ready():
 func _on_player_take_damage(dmg):
 	$"VBoxContainer/HBoxContainer/HealthBar".TakeDamage(dmg)
 
-func _on_player_grab_coins():
+func _on_player_grab_coin():
 	$"VBoxContainer/HBoxContainer/CoinCount".gain_coins(1)
+

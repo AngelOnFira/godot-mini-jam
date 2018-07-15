@@ -167,7 +167,7 @@ position = Vector2( 40, 136 )
 
 [connection signal="died" from="Map/player" to="Map" method="_on_died"]
 
-[connection signal="grab_coins" from="Map/player" to="CanvasLayer/PlayerUI" method="_on_player_grab_coins"]
+[connection signal="grab_coin" from="Map/player" to="CanvasLayer/PlayerUI" method="_on_player_grab_coin"]
 
 [connection signal="take_damage" from="Map/player" to="CanvasLayer/PlayerUI" method="_on_player_take_damage"]
 
