@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menus/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://ui/button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/Fonts/TooMuchInk.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=5]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -49,13 +50,12 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "
 [node name="Menu" type="VBoxContainer" parent="." index="1"]
 
 anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-margin_left = 100.0
-margin_top = -300.0
-margin_right = 650.0
-margin_bottom = 300.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 36.0
+margin_bottom = 291.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -65,15 +65,36 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="CenterRow" type="HBoxContainer" parent="Menu" index="0"]
+[node name="Label" type="Label" parent="Menu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 192.0
-margin_right = 550.0
-margin_bottom = 408.0
+margin_right = 988.0
+margin_bottom = 71.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Crawl The Dungeon"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 75.0
+margin_right = 988.0
+margin_bottom = 291.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -82,7 +103,23 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow" index="0"]
+[node name="CenterRow" type="HBoxContainer" parent="Menu/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 988.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/VBoxContainer/CenterRow" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -99,43 +136,136 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="StartGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 2 )]
+[node name="StartGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
 
 rect_scale = Vector2( 1, 1 )
 
-[node name="Label" parent="Menu/CenterRow/Buttons/StartGame" index="0"]
-
-text = "Start"
-
-[node name="ExitGame" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 2 )]
+[node name="ExitGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="1" instance=ExtResource( 3 )]
 
 margin_top = 110.0
 margin_bottom = 216.0
 rect_scale = Vector2( 1, 1 )
 
-[node name="Label" parent="Menu/CenterRow/Buttons/ExitGame" index="0"]
+[node name="Menu2" type="VBoxContainer" parent="." index="2"]
 
-text = "Exit"
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 36.0
+margin_bottom = 291.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="FadeIn" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Label" type="Label" parent="Menu2" index="0"]
 
-[node name="player" parent="." index="3" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 988.0
+margin_bottom = 71.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Crawl The Dungeon"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 75.0
+margin_right = 988.0
+margin_bottom = 291.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu2/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 988.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu2/VBoxContainer/CenterRow" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 352.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="StartGame" parent="Menu2/VBoxContainer/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
+
+rect_scale = Vector2( 1, 1 )
+
+[node name="ExitGame" parent="Menu2/VBoxContainer/CenterRow/Buttons" index="1" instance=ExtResource( 3 )]
+
+margin_top = 110.0
+margin_bottom = 216.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="FadeIn" parent="." index="3" instance=ExtResource( 4 )]
+
+[node name="player" parent="." index="4" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 719.487, 333.89 )
+position = Vector2( 721.487, 303.89 )
 scale = Vector2( 10.5728, 10.5728 )
 
 [node name="Camera2D" parent="player/Pivot" index="2"]
 
 current = false
 
-[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
 
-[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
+
+[connection signal="pressed" from="Menu2/VBoxContainer/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
+
+[connection signal="pressed" from="Menu2/VBoxContainer/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
 
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
 
-[editable path="Menu/CenterRow/Buttons/StartGame"]
-[editable path="Menu/CenterRow/Buttons/ExitGame"]
 [editable path="player"]
