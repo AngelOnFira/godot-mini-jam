@@ -1,6 +1,7 @@
 tool
 extends Node
 enum TILE {_floor = 0,_wall_left,_wall_right,_wall_up,_wall_down,_wall_center}
+enum SPLIT_TYPE {HORIZONTAL,VERTICAL}
 
 const room_density  = 0.75
 const split_density = 0.35
@@ -9,10 +10,10 @@ const min_room_area = 25
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	generate_dungeon(32,32,3)
+	generate_dungeon(16,16)
 	pass
 
-func generate_dungeon(height,width,depth):
+func generate_dungeon(height,width):
 	$"Floor".clear()
 	var map = []
 	var dim = {'x1':0,'x2':width,'y1':0,'y2':height}
@@ -29,64 +30,6 @@ func generate_dungeon(height,width,depth):
 				$"Floor".set_cell(x,y,map[x][y])
 	print('Generation Done')
 	
-func rec_vertical(dim,depth,map):
-	#Base case / creating the size of the room : note to change
-	if depth == 0:
-		return make_room(dim,map)
-		
-	#dividing up the rooms
-	var p1 = int(split_density*(dim['x2']-dim['x1']))
-	var p2 = int((1-split_density)*(dim['x2']-dim['x1']))
-	#var slice = (randi()%(p2-p1)) + dim['x1']
-	var slice = dim['x1'] + (dim['x2'] - dim['x1'])/2
-	var area1 = {'x1':dim['x1'],'x2':slice,'y1':dim['y1'],'y2':dim['y2']}
-	var area2 = {'x1':slice+1,'x2':dim['x2'],'y1':dim['y1'],'y2':dim['y2']}
-	
-	var room1 = rec_horizontal(area1,depth-1,map)
-	var room2 = rec_vertical(area2,depth-1,map)
-
-	
-	var y_min = max(room1['y1'],room2['y1'])
-	var y_max = min(room1['y2'],room2['y2'])
-
-	var y_path = y_min
-	if(not y_max-y_min == 0):
-		y_path = int(((y_max-y_min)/2)+y_min)
-		
-	for x in range(room1['x2'],room2['x1']):
-		map[x][y_path] = TILE._floor
-	
-	return room1
-	
-func rec_horizontal(dim,depth,map):
-	if depth == 0:
-		return make_room(dim,map)
-	
-	var p1 = int(split_density*(dim['y2']-dim['y1']))
-	var p2 = int((1-split_density)*(dim['y2']-dim['y1']))
-	#var slice = (randi()%(p2-p1)) + dim['y1']	
-	var slice = dim['y1'] + (dim['y2'] - dim['y1'])/2
-	
-	var area1 = {'x1':dim['x1'],'x2':dim['x2'],'y1':dim['y1'],'y2':slice}
-	var area2 = {'x1':dim['x1'],'x2':dim['x2'],'y1':slice+1,'y2':dim['y2']}
-	var room1 = rec_vertical(area1,depth-1,map)
-	var room2 = rec_vertical(area2,depth-1,map)
-	
-	#make a horizontal line
-	
-	var x_min = max(room1['x1'],room2['x1'])
-	var x_max = min(room1['x2'],room2['x2'])
-
-	var x_path = x_min
-	if( not x_max - x_min ==0):
-		x_path = int(((x_max-x_min)/2)+x_min)
-	
-	
-	for y in range(room1['y2'],room2['y1']):
-		map[x_path][y] = TILE._floor
-		
-	return room1
-	
 func area(dim):
 	return abs((dim['x2']-dim['x1'])*(dim['y2']-dim['y1']))
 	
@@ -94,31 +37,42 @@ func area(dim):
 func recursive_gen(dim,map):
 	var areas = []
 	var rooms = []
+	var seperated = []
 	var cleaned_rooms = []
+	var split_types = [SPLIT_TYPE.HORIZONTAL,SPLIT_TYPE.VERTICAL]
 	
 	#base case, this room does not have enough to make a room
 	if(area(dim)*pow(room_density,2) < min_room_area):
-		return null
+		return []
 	
 	#split the room vertically, or horizontally
-	if(wrapi(randi(),0,2) == 0):
-		areas = splitv2(dim)
-	else :
-		areas = splith2(dim)
+	var split = split_types[randi()%len(split_types)]
+	if split == SPLIT_TYPE.VERTICAL:
+		areas = splitv(dim)
+	elif split == SPLIT_TYPE.HORIZONTAL:
+		areas = splith(dim)
 	
 	
 	for room in areas:
-		rooms.append(recursive_gen(room,map))
-	
-	if rooms[0] == null && rooms[1] == null:
-		rooms = [make_room(dim,map)]
+		var temp = recursive_gen(room,map)
 		
-	print(rooms)
+		seperated.append(temp)
+		rooms = concat(rooms,temp)
 	
-	for room in rooms:
-		if not room == null:
-			cleaned_rooms.append(room)
-	return cleaned_rooms
+	if len(rooms)<=0:
+		return [make_room(dim,map)]
+	
+	if len(rooms)<=1:
+		return rooms
+		
+	connect_rooms(seperated[0],seperated[1],split)
+	
+	return rooms
+	
+func concat(list1,list2):
+	for item in list2:
+		list1.append(item)
+	return list1
 
 func splitv(dim):
 	var slice = dim['x1'] + (dim['x2'] - dim['x1'])/2
@@ -130,7 +84,7 @@ func splitv(dim):
 func splitv2(dim):
 	var p1 = int(split_density*(dim['x2']-dim['x1']))
 	var p2 = int((1-split_density)*(dim['x2']-dim['x1']))
-	var slice = (wrapi(randi(),0,(p2-p1))) + dim['x1']
+	var slice = int((rand_range(0,(p2-p1))) + dim['x1'])
 	
 	var area1 = {'x1':dim['x1'],'x2':slice,'y1':dim['y1'],'y2':dim['y2']}
 	var area2 = {'x1':slice+1,'x2':dim['x2'],'y1':dim['y1'],'y2':dim['y2']}
@@ -148,7 +102,7 @@ func splith(dim):
 func splith2(dim):
 	var p1 = int(split_density*(dim['y2']-dim['y1']))
 	var p2 = int((1-split_density)*(dim['y2']-dim['y1']))
-	var slice = (wrapi(randi(),0,(p2-p1))) + dim['y1']
+	var slice = int(rand_range(0,(p2-p1)) + dim['y1'])
 	
 	var area1 = {'x1':dim['x1'],'x2':dim['x2'],'y1':dim['y1'],'y2':slice}
 	var area2 = {'x1':dim['x1'],'x2':dim['x2'],'y1':slice+1,'y2':dim['y2']}
@@ -171,6 +125,28 @@ func make_room(dim,map):
 	print(room)
 	return room
 	
-
-		
-		
+func connect_rooms(rooms1,rooms2,split_type):
+	print(rooms1," -- : -- ",rooms2)
+	find_max('x1','x2',rooms1)
+	if split_type == SPLIT_TYPE.HORIZONTAL:
+		var r1_max_x = find_max('x1','x2',rooms1)
+		var r1_min_x = find_min('x1','x2',rooms1)
+		var r2_max_x = find_max('x1','x2',rooms2)
+		var r2_min_x = find_min('x1','x2',rooms2)
+		pass
+	if split_type == SPLIT_TYPE.VERTICAL:
+		pass
+	
+	return
+	
+func find_max(key1,key2,list):
+	var initial = list[0][key1]
+	for item in list:
+		initial = max(max(initial,item[key1]),item[key2])
+	return initial
+	
+func find_min(key1,key2,list):
+	var initial = list[0][key1]
+	for item in list:
+		initial = min(min(initial,item[key1]),item[key2])
+	return initial
