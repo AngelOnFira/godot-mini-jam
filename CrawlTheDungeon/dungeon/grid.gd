@@ -47,3 +47,10 @@ func update_pawn_position(pawn, cell_start, cell_target):
 func _on_died(pawn):
 	var cell = world_to_map(pawn.position)
 	set_cellv(cell, EMPTY)
+
+func _on_dealt_damage(location, damage):
+	location.x += 8
+	location.y += 8
+	var cell = world_to_map(location)
+	var pawn = get_cell_pawn(cell)
+	pawn.take_damage(damage)

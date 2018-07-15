@@ -4,8 +4,10 @@ onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
 var prev_direction = Vector2(1,0)
 export(Curve) var damage_roll
+export(float, 0, 100) var health = 25
 
 signal dealt_damage
+signal died
 
 func _ready():
 	type = ACTOR
@@ -25,6 +27,10 @@ func _process(delta):
 			bump()
 	elif Input.is_action_just_pressed("ui_select"):
 		attack()
+	if health <= 0:
+		print("<player>: I am le dead.")
+		emit_signal("died", self)
+		queue_free()
 	
 func attack():
 	set_process(false)
@@ -89,3 +95,6 @@ func move_to(target_position):
 	else:
 		$"AnimationPlayer".play("idle")
 	set_process(true)
+	
+func take_damage(dmg):
+	health = max(health-dmg, 0)

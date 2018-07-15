@@ -1,27 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://dungeon/floor/Floor1.gd" type="Script" id=1]
-[ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=2]
-[ext_resource path="res://dungeon/grid.gd" type="Script" id=3]
+[ext_resource path="res://dungeon/floorAndWalls.tres" type="TileSet" id=1]
+[ext_resource path="res://dungeon/grid.gd" type="Script" id=2]
+[ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://dungeon/blank_tile.png" type="Texture" id=5]
-[ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve" id=1]
 
 min_value = 1.0
 max_value = 10.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 10 ), -0.0992187, -0.0992187, 0, 0, Vector2( 1, 0.0380859 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 19.9418, 0, 1, Vector2( 0.501458, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -20.0585, 0.0, 1, 0 ]
 
 [node name="World" type="Node" index="0"]
-
-script = ExtResource( 1 )
 
 [node name="Floor" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -42,7 +38,7 @@ _sections_unfolded = [ "Cell" ]
 [node name="FloorObj" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -63,7 +59,7 @@ _sections_unfolded = [ "Cell" ]
 [node name="Map" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -79,34 +75,29 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 65537, 48, 0, 65538, 50, 0, 65539, 50, 0, 65540, 50, 0, 65541, 50, 0, 65542, 50, 0, 65543, 50, 0, 65544, 50, 0, 65545, 50, 0, 65546, 50, 0, 65547, 50, 0, 65548, 50, 0, 65549, 51, 0, 131073, 64, 0, 131085, 64, 0, 196609, 64, 0, 196621, 64, 0, 262145, 67, 0, 262157, 64, 0, 327681, 64, 0, 327685, 58, 0, 327686, 68, 0, 327688, 70, 0, 327689, 50, 0, 327690, 50, 0, 327691, 50, 0, 327692, 50, 0, 327693, 59, 0, 393217, 64, 0, 393229, 64, 0, 458753, 64, 0, 458765, 67, 0, 524289, 64, 0, 524301, 64, 0, 589825, 64, 0, 589837, 64, 0, 655361, 64, 0, 655373, 64, 0, 720897, 72, 0, 720898, 50, 0, 720899, 50, 0, 720900, 50, 0, 720901, 50, 0, 720902, 50, 0, 720903, 50, 0, 720904, 50, 0, 720905, 50, 0, 720906, 50, 0, 720907, 50, 0, 720908, 50, 0, 720909, 75, 0 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="player" parent="Map" index="0" instance=ExtResource( 4 )]
-
-editor/display_folded = true
-position = Vector2( 40, 136 )
-movement_speed = 1.5
-damage_roll = SubResource( 1 )
-
-[node name="Visibility_debug" type="Sprite" parent="Map/player/WeaponLocations/Position2D" index="0"]
-
-visible = false
-modulate = Color( 0.800781, 0.330987, 0.125122, 0.276235 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="slime" parent="Map" index="1" groups=[
+[node name="slime" parent="Map" index="0" groups=[
 "enemy",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 3 )]
 
 position = Vector2( 152, 136 )
 movement_speed = 1.5
 health = 10
 
-[connection signal="dealt_damage" from="Map/player" to="." method="_on_player_dealt_damage"]
+[node name="player" parent="Map" index="1" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 40, 136 )
+damage_roll = SubResource( 1 )
+health = 25
 
 [connection signal="died" from="Map/slime" to="Map" method="_on_died"]
+
+[connection signal="dealt_damage" from="Map/player" to="Map" method="_on_dealt_damage"]
+
+[connection signal="died" from="Map/player" to="Map" method="_on_died"]
 
 
 [editable path="Map/player"]
