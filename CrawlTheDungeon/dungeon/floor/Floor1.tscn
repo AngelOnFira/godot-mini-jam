@@ -7,10 +7,11 @@
 [ext_resource path="res://entities/slime/slime.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -92,7 +93,7 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 65537, 48, 0, 65538, 50, 0, 65539, 50, 0, 65540, 50, 0, 65541, 50, 0, 65542, 50, 0, 65543, 50, 0, 65544, 50, 0, 65545, 50, 0, 65546, 50, 0, 65547, 50, 0, 65548, 50, 0, 65549, 51, 0, 131073, 64, 0, 131085, 64, 0, 196609, 64, 0, 196621, 64, 0, 262145, 67, 0, 262157, 64, 0, 327681, 64, 0, 327685, 58, 0, 327686, 68, 0, 327688, 70, 0, 327689, 50, 0, 327690, 50, 0, 327691, 50, 0, 327692, 50, 0, 327693, 59, 0, 393217, 64, 0, 393229, 64, 0, 458753, 64, 0, 458765, 67, 0, 524289, 64, 0, 524301, 64, 0, 589825, 64, 0, 589837, 64, 0, 655361, 64, 0, 655373, 64, 0, 720897, 72, 0, 720898, 50, 0, 720899, 50, 0, 720900, 50, 0, 720901, 50, 0, 720902, 50, 0, 720903, 50, 0, 720904, 50, 0, 720905, 50, 0, 720906, 50, 0, 720907, 50, 0, 720908, 50, 0, 720909, 75, 0 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -146,6 +147,10 @@ movement_speed = 1.5
 
 editor/display_folded = true
 position = Vector2( 40, 136 )
+
+[node name="Camera2D" parent="Map/player/Pivot" index="2"]
+
+current = true
 
 [connection signal="dealt_damage" from="Map/slime4" to="Map" method="_on_dealt_damage"]
 

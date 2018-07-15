@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menus/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://ui/Fonts/TooMuchInk.tres" type="DynamicFont" id=2]
-[ext_resource path="res://ui/button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/FadeIn.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/Fonts/TooMuchInk.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/button.tscn" type="PackedScene" id=4]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -20,7 +19,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="0"]
+[node name="Tween" type="Tween" parent="." index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 position = Vector2( 512, 300 )
 anchor_mode = 1
@@ -47,7 +55,13 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "Pause", "Smoothing", "Transform", "Visibility", "Z Index" ]
 
-[node name="Menu" type="VBoxContainer" parent="." index="1"]
+[node name="player" parent="." index="2" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 721.487, 303.89 )
+scale = Vector2( 10.5728, 10.5728 )
+
+[node name="Menu" type="VBoxContainer" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -55,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 0.0
 margin_left = 36.0
 margin_top = 36.0
-margin_bottom = 291.0
+margin_bottom = 327.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -79,7 +93,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Crawl The Dungeon"
 percent_visible = 1.0
 lines_skipped = 0
@@ -136,7 +150,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="StartGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
+[node name="StartGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="0" instance=ExtResource( 4 )]
 
 rect_scale = Vector2( 1, 1 )
 
@@ -156,7 +170,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 0.9375, 0, 1 )
 text = "Start"
 align = 1
@@ -166,7 +180,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="ExitGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="1" instance=ExtResource( 3 )]
+[node name="ExitGame" parent="Menu/VBoxContainer/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
 
 margin_top = 110.0
 margin_bottom = 216.0
@@ -188,7 +202,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 0.9375, 0, 1 )
 text = "Exit"
 align = 1
@@ -198,23 +212,27 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="FadeIn" parent="." index="2" instance=ExtResource( 4 )]
+[node name="ColorRect" type="ColorRect" parent="." index="4"]
 
-[node name="player" parent="." index="3" instance=ExtResource( 5 )]
-
-editor/display_folded = true
-position = Vector2( 721.487, 303.89 )
-scale = Vector2( 10.5728, 10.5728 )
-
-[node name="Camera2D" parent="player/Pivot" index="2"]
-
-current = false
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1025.0
+margin_bottom = 599.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0 )
+_sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="Menu/VBoxContainer/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
 
 [connection signal="pressed" from="Menu/VBoxContainer/CenterRow/Buttons/ExitGame" to="." method="_on_ExitGame_pressed"]
-
-[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
 
 [editable path="player"]
