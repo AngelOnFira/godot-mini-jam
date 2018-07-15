@@ -36,6 +36,7 @@ func die():
 	print("<player>: I am le dead.")
 	emit_signal("died", self)
 	$AnimationPlayer.play("die")
+	yield($AnimationPlayer, "animation_finished")
 	visible = false
 	
 func attack():

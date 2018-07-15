@@ -370,7 +370,7 @@ _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="player" type="Node2D" groups=[
+[node name="player" type="Node2D" index="0" groups=[
 "player",
 ]]
 
