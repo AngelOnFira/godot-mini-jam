@@ -4,10 +4,11 @@ onready var Grid = get_parent()
 export(float, 0, 10) var movement_speed = 1
 var prev_direction = Vector2(1,0)
 export(Curve) var damage_roll
-export(float, 0, 100) var health = 10
+export(int, 0, 4) var health = 4
 
 signal dealt_damage
 signal died
+signal take_damage
 
 func _ready():
 	type = ACTOR
@@ -104,14 +105,16 @@ func move_to(target_position):
 	set_process(true)
 	
 func take_damage(dmg):
-	print("<player>: Taking %2.2f damage!" % dmg)
+	var _dmg = int(dmg);
+	print("<player>: Taking <_dmg> damage!" )
 	#$AnimationPlayer.play("take_damage")
-	health = max(health-dmg, 0)
+	health = max(health-_dmg, 0)
 	$AnimationPlayer.play("take_damage")
 	$Pivot/Particles2D.emitting = true
 	$"Pivot/Particles2D/Timer".start()
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("idle")
+	emit_signal("take_damage", _dmg)
 	
 func shut_off_emit():
 	$Pivot/Particles2D.emitting = false

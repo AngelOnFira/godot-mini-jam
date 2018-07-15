@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://HealthBar.gd" type="Script" id=1]
-[ext_resource path="res://ui/Heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/PlayerUI.gd" type="Script" id=1]
+[ext_resource path="res://HealthBar.gd" type="Script" id=2]
+[ext_resource path="res://ui/gui/Heart.tscn" type="PackedScene" id=3]
 
-[node name="PlayerUI" type="Control" index="0"]
+[node name="PlayerUI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -17,6 +18,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
@@ -64,25 +66,25 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Margin", "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Fourth" parent="VBoxContainer/HBoxContainer/HealthBar" index="0" instance=ExtResource( 2 )]
+[node name="Fourth" parent="VBoxContainer/HBoxContainer/HealthBar" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 64.8259, 15.0206 )
 
-[node name="Third" parent="VBoxContainer/HBoxContainer/HealthBar" index="1" instance=ExtResource( 2 )]
+[node name="Third" parent="VBoxContainer/HBoxContainer/HealthBar" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 47.6971, 15.0206 )
 
-[node name="Second" parent="VBoxContainer/HBoxContainer/HealthBar" index="2" instance=ExtResource( 2 )]
+[node name="Second" parent="VBoxContainer/HBoxContainer/HealthBar" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 30.3048, 15.2842 )
 
-[node name="First" parent="VBoxContainer/HBoxContainer/HealthBar" index="3" instance=ExtResource( 2 )]
+[node name="First" parent="VBoxContainer/HBoxContainer/HealthBar" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 13.176, 15.2842 )
 

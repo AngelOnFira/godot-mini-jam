@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health_bar.png-fa03ed54d951eeea2f042d50fd9ce648.stex"
+path="res://.import/heart_animated_1.png-790c7b6003c959fb69db111e0cedfbe8.stex"
 
 [deps]
 
-source_file="res://ui/gui/Hearts/PNG/health_bar/health_bar.png"
-dest_files=[ "res://.import/health_bar.png-fa03ed54d951eeea2f042d50fd9ce648.stex" ]
+source_file="res://ui/gui/heart_animated_1.png"
+dest_files=[ "res://.import/heart_animated_1.png-790c7b6003c959fb69db111e0cedfbe8.stex" ]
 
 [params]
 
