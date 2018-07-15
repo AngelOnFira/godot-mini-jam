@@ -9,6 +9,7 @@ export(int, 0, 4) var health = 4
 signal dealt_damage
 signal died
 signal take_damage
+signal grab_coins
 
 func _ready():
 	type = ACTOR
@@ -106,7 +107,7 @@ func move_to(target_position):
 	
 func take_damage(dmg):
 	var _dmg = int(dmg);
-	print("<player>: Taking <_dmg> damage!" )
+	print("<player>: Taking " + str(_dmg) + " damage!" )
 	#$AnimationPlayer.play("take_damage")
 	health = max(health-_dmg, 0)
 	$AnimationPlayer.play("take_damage")
@@ -121,5 +122,10 @@ func shut_off_emit():
 	
 func pickup(obj):
 	obj.visible = false
-	$Inventory.add_child(obj)
-	print("<player>: Picked up [%s]. Inventory now contains:\n\t%s" % [obj.name, $Inventory.get_children()])
+	if obj.is_in_group("coin"):
+		emit_signal("grab_coin")
+		print("<player>: Grabed a Coin")
+	else:
+		$Inventory.add_child(obj)
+		print("<player>: Picked up [%s]. Inventory now contains:\n\t%s" % [obj.name, $Inventory.get_children()])
+		print("Is in groups " + str(obj.get_groups()))
