@@ -10,6 +10,7 @@ func _ready():
 	type = ACTOR
 	update_input_direction(Vector2(1, 0))
 	$"AnimationPlayer".play("idle")
+	$"Pivot/Particles2D/Timer".wait_time = $"Pivot/Particles2D".lifetime
 	
 func _process(delta):
 	if health <= 0:
@@ -57,4 +58,13 @@ func move_to(target_position):
 	
 func take_damage(damage):
 	print("<slime>: Taking %2.2f damage!" % damage)
+	$AnimationPlayer.play("take_damage")
 	health -= damage
+	
+func emit_blood():
+	$Pivot/Particles2D.emitting = true
+	$"Pivot/Particles2D/Timer".start()
+
+func shut_off_emit():
+	$Pivot/Particles2D.emitting = false
+	

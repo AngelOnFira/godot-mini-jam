@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve" id=1]
 
-min_value = 1.0
+min_value = 0.99
 max_value = 10.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 19.9418, 0, 1, Vector2( 0.501458, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -20.0585, 0.0, 1, 0 ]
@@ -84,14 +84,12 @@ _sections_unfolded = [ "Cell" ]
 
 position = Vector2( 152, 136 )
 movement_speed = 1.5
-health = 10
 
 [node name="player" parent="Map" index="1" instance=ExtResource( 4 )]
 
 editor/display_folded = true
 position = Vector2( 40, 136 )
 damage_roll = SubResource( 1 )
-health = 25
 
 [connection signal="died" from="Map/slime" to="Map" method="_on_died"]
 

@@ -139,7 +139,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="player" type="Node2D" index="0" groups=[
+[node name="player" type="Node2D" groups=[
 "player",
 ]]
 
@@ -147,9 +147,8 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 type = 143
 movement_speed = 1
-min_damage = 1
-max_damage = 10
 damage_roll = null
+health = 25
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
