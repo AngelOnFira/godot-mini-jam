@@ -126,66 +126,66 @@ func make_room(dim,map):
 	return room
 	
 func connect_rooms(rooms1,rooms2,split_type,map):
-#	var random_room = rooms1[0]
-#
-#	print(rooms1," -- : -- ",rooms2)
-#	if split_type == SPLIT_TYPE.HORIZONTAL:
-#		var increment = 1
-#		var y
-#
-#		var r1_max = max(random_room['x1'],random_room['x2'])
-#		var r1_min = min(random_room['x1'],random_room['x2'])
-#
-#		var r2_max = find_max('x1','x2',rooms2)
-#		var r2_min = find_min('x1','x2',rooms2)
-#
-#		var x = int(rand_range(max(r2_min,r1_min),min(r2_max,r1_max)))
-#
-#		if(min(random_room['y1'],random_room['y2']) > find_max('y1','y2',rooms2)):
-#			#above
-#			print('above')
-#			increment = -1
-#			y = min(random_room['y1'],random_room['y2'])
-#		else:
-#			#below
-#			print('below')
-#			increment = 1
-#			y = max(random_room['y1'],random_room['y2'])
-#
-#		while(map[x][y] == null):
-#			map[x][y] = TILE._floor
-#			y = y + increment
-#		map[x][y] = TILE._floor
-#
-#	if split_type == SPLIT_TYPE.VERTICAL:
-#		var increment = 1
-#		var x
-#
-#		var r1_max = max(random_room['y1'],random_room['y2'])
-#		var r1_min = min(random_room['y1'],random_room['y2'])
-#
-#		var r2_max = find_max('y1','y2',rooms2)
-#		var r2_min = find_min('y1','y2',rooms2)
-#
-#		var y = int(rand_range(max(r2_min,r1_min),min(r2_max,r1_max)))
-#
-#		if(min(random_room['x1'],random_room['x2']) > find_max('x1','x2',rooms2)):
-#			#above
-#			print('above')
-#			increment = -1
-#			x = min(random_room['x1'],random_room['x2'])
-#		else:
-#			#below
-#			print('below')
-#			increment = 1
-#			x = max(random_room['x1'],random_room['x2'])
-#
-#		while(map[x][y] == null):
-#			map[x][y] = TILE._floor
-#			x = x + increment
-#		map[x][y] = TILE._floor
-#
-#	return
+	var random_room = rooms1[len(rooms1)-1]
+
+	print(rooms1," -- : -- ",rooms2)
+	if split_type == SPLIT_TYPE.HORIZONTAL:
+		var increment = 1
+		var y
+
+		var r1_max = max(random_room['x1'],random_room['x2'])
+		var r1_min = min(random_room['x1'],random_room['x2'])
+
+		var r2_max = find_max('x1','x2',rooms2)
+		var r2_min = find_min('x1','x2',rooms2)
+
+		var x = int(rand_range(max(r2_min,r1_min),min(r2_max,r1_max)))
+
+		if(min(random_room['y1'],random_room['y2']) > find_max('y1','y2',rooms2)):
+			#above
+			print('above')
+			increment = -1
+			y = min(random_room['y1'],random_room['y2'])
+		else:
+			#below
+			print('below')
+			increment = 1
+			y = max(random_room['y1'],random_room['y2'])
+
+		while(map[x][y] == null):
+			map[x][y] = TILE._floor
+			y = y + increment
+		map[x][y] = TILE._floor
+
+	if split_type == SPLIT_TYPE.VERTICAL:
+		var increment = 1
+		var x
+
+		var r1_max = max(random_room['y1'],random_room['y2'])
+		var r1_min = min(random_room['y1'],random_room['y2'])
+
+		var r2_max = find_max('y1','y2',rooms2)
+		var r2_min = find_min('y1','y2',rooms2)
+
+		var y = int(rand_range(max(r2_min,r1_min),min(r2_max,r1_max)))
+
+		if(min(random_room['x1'],random_room['x2']) > find_max('x1','x2',rooms2)):
+			#above
+			print('above')
+			increment = -1
+			x = min(random_room['x1'],random_room['x2'])
+		else:
+			#below
+			print('below')
+			increment = 1
+			x = max(random_room['x1'],random_room['x2'])
+
+		while(map[x][y] == null):
+			map[x][y] = TILE._floor
+			x = x + increment
+		map[x][y] = TILE._floor
+
+	return
 	
 func find_max(key1,key2,list):
 	var initial = list[0][key1]
