@@ -23,8 +23,8 @@ func request_move(pawn, direction):
 		OBJECT:
 			if !pawn.is_in_group("player"): return
 			var object_pawn = get_cell_pawn(cell_target)
-			object_pawn.collect()
-			pawn.pickup(object_pawn.duplicate(true))
+			if object_pawn.is_in_group("item"):
+				object_pawn.collect(pawn)
 			return update_pawn_position(pawn, cell_start, cell_target)
 		ACTOR:
 			var pawn_name = get_cell_pawn(cell_target).name

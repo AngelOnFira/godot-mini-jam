@@ -103,6 +103,7 @@ outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 ) ]
 
 [node name="PSTile" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 vframes = 16
 hframes = 8
