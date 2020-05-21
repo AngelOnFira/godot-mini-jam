@@ -12,7 +12,7 @@ signal take_damage
 signal grab_coin
 
 func _ready():
-	type = ACTOR
+	type = CELL_TYPES.ACTOR
 	update_input_direction(prev_direction)
 	$"AnimationPlayer".play("idle")
 	$"Pivot/Particles2D/Timer".wait_time = $"Pivot/Particles2D".lifetime

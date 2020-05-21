@@ -10,7 +10,7 @@ signal died
 signal dealt_damage
 
 func _ready():
-	type = ACTOR
+	type = CELL_TYPES.ACTOR
 	update_input_direction(Vector2(1, 0))
 	$"AnimationPlayer".play("idle")
 	$"Pivot/Particles2D/Timer".wait_time = $"Pivot/Particles2D".lifetime

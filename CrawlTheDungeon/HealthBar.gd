@@ -35,4 +35,4 @@ func TakeHealing():
 	health += 1;
 
 func on_player_take_damage():
-	TakeDamage()
+	TakeDamage(1)

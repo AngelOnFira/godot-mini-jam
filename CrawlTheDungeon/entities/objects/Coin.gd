@@ -2,7 +2,7 @@ extends "../pawn.gd"
 
 
 func _ready():
-	type = OBJECT
+	type = CELL_TYPES.OBJECT
 	add_to_group("coin")
 	add_to_group("item")
 	$AnimationPlayer.play("spin")
